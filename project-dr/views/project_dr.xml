@@ -14,4 +14,15 @@
           </xpath>
       </field>
     </record>
+
+    <record model="ir.ui.view" id="subtask_list_view">
+        <field name="name">subtask.list.form</field>
+        <field name="model">project.task.subtask</field>
+        <field name="inherit_id" ref="project_task_subtask.subtask_list_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="result_type"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>
