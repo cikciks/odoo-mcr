@@ -8,7 +8,7 @@
                     <div class="page">
                         <br/>
                         <br/>
-                        <center><h2>Task: <span t-field="o.name"/></h2></center>
+                        <center><h2>Production: <span t-field="o.name"/></h2></center>
                         <table class="table table-bordered">
                             <tr>
                                 <th>Project</th>
