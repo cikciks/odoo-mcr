@@ -6,6 +6,7 @@
       <field name="inherit_id" ref="project_task_subtask.view_id"/>
       <field name="arch" type="xml">
           <xpath expr="//field[@name='name']" position="after">
+              <field name="result_type"/>
               <field name="reference"/>
               <field name="specification"/>
               <field name="result"/>
