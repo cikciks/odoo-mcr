@@ -16,7 +16,7 @@
     "qweb": [
     ],
     "demo": [
-        'demo/project_dr_demo.xml'
+        ''
     ],
 
     "post_load": None,
