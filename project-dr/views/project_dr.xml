@@ -5,12 +5,12 @@
       <field name="model">project.subtask.dr</field>
       <field name="inherit_id" ref="project_task_subtask.view_id"/>
       <field name="arch" type="xml">
-          <field name="name" position="after">
+          <xpath expr="//field[@name='name']" position="after">
               <field name="reference"/>
               <field name="specification"/>
               <field name="result"/>
               <field name="remark"/>
-          </field>
+          </xpath>
       </field>
     </record>
 </odoo>
