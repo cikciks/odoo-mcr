@@ -38,7 +38,7 @@
                                 </table>
                             </div>
                             <div class="col-xs-6">
-                                 <table>
+                                <table>
                                     <tr>
                                         <td><strong>Production Date</strong></td>
                                         <td>&#160; : &#160;</td>
@@ -67,6 +67,41 @@
                                 </table>
                             </div>
                         </div>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th><strong>Parameters</strong></th>
+                                    <th><strong>Reference</strong></th>
+                                    <th><strong>Specification</strong></th>
+                                    <th><strong>Result</strong></th>
+                                    <th><strong>Done By</strong></th>
+                                    <th><strong>Remarks</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.subtask_ids" t-as="line">
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.reference"/>
+                                    </td>
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.specification"/>
+                                    </td>
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.result"/>
+                                    </td>
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.user_id"/>
+                                    </td>
+                                    <td style="padding-top: 1; padding-bottom: 1;">
+                                        <span t-field="line.remark"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
                     </div>
                 </t>
             </t>
