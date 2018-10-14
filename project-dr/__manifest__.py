@@ -1,12 +1,12 @@
 {
-    "name": """Project Task additional field""",
-    "summary": """add field for document released""",
+    "name": """Project Task - Document Release Field""",
+    "summary": """add field for Document Release""",
     "category": """Project Management""",
     "images": ['images/checklist_main.png'],
     "version": "11.0.1.0.0",
     "application": True,
 
-    "author": "cikciks",
+    "author": "MCR",
 
     "depends": ['base', 'project','project_task_subtask'],
     "external_dependencies": {"python": [], "bin": []},
