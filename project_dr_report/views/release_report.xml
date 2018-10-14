@@ -85,7 +85,7 @@
     <report
             id="report_project_task_release"
             model="project.task"
-            name="project_task_report.release_report"
+            name="project_dr_report.release_report"
             string="Print Release Form"
             report_type="qweb-pdf"
             multi="False"/>
