@@ -2,7 +2,7 @@
 <odoo>
     <record id="view_task_form_dr" model="ir.ui.view">
       <field name="name">project.task.subtask</field>
-      <field name="model">project.subtask.dr/field>
+      <field name="model">project.subtask.dr</field>
       <field name="inherit_id" ref="project_task_subtask.view_id"/>
       <field name="arch" type="xml">
           <field name="name" position="after">
@@ -12,5 +12,5 @@
               <field name="remark"/>
           </field>
       </field>
-</record>
+    </record>
 </odoo>
