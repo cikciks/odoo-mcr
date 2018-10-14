@@ -8,7 +8,7 @@
 
     "author": "MCR",
 
-    "depends": ['base', 'project','project_task_subtask','project-dr'],
+    "depends": ['base', 'project','project_task_subtask'],
     "external_dependencies": {"python": [], "bin": []},
     "data": [
         'views/project_dr.xml'
