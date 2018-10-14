@@ -4,7 +4,7 @@
     "category": """Project Management""",
     "images": ['images/checklist_main.png'],
     "version": "11.0.1.0.0",
-    "application": False,
+    "application": True,
 
     "author": "cikciks",
 
