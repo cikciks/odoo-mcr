@@ -25,4 +25,18 @@
             </xpath>
         </field>
     </record>
+
+    <record id="project_task_subtask_view_search" model="ir.ui.view">
+        <field name="name">project.task.subtask.filter</field>
+        <field name="model">project.task.subtask</field>
+        <field name="inherit_id" ref="project_task_subtask.project_task_subtask_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <!-- This field will show up on the default filters
+                     &lt; is the XML encoding for < and &gt; is the XML encoding for > -->
+                <filter string="Analysis Type" domain="[]" context="{'group_by':'result_type'}"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
