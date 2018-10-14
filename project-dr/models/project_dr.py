@@ -7,7 +7,7 @@ from odoo.tools.translate import _
 
 RESULT_TYPES = {'material': 'Incoming Analysis Results',
                 'production': 'Online Testing Analysis Results',
-                'laboratory': 'Finished Product Analysys Result',
+                'laboratory': 'Finished Product Analysis Result',
                 'enviroment': 'Pathogen & Hygiene Monitoring Result'}
 
 
