@@ -79,6 +79,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
+                                <t t-set="result_type" t-value="[]"/>
+                                <t t-foreach="o.subtask_ids" t-as="l">
+                                    <t t-set="result_type" t-value="result_type+[l.product_id.categ_id]"/>
+                                </t>
+                                -->
                                 <tr t-foreach="o.subtask_ids" t-as="line">
                                     <td style="padding-top: 1; padding-bottom: 1;">
                                         <span t-field="line.name"/>
