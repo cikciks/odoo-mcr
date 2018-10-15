@@ -18,6 +18,6 @@ class ProjectProduction(models.Model):
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                              'Product', required=True, copy=False, default='cnc02')
     lot = fields.Char(required=False, string="Lot Number")
-    weight_pack = fields.Char(required=False, string="Weight/Pack")
-    weight_box = fields.Char(required=False, string="Weight/Box")
+    weight_pack = fields.Char(required=False, string="Weight Pack")
+    weight_box = fields.Char(required=False, string="Weight Box")
     quantity = fields.Char(required=False, string="Quantity")
