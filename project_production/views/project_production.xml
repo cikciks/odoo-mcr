@@ -5,7 +5,7 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@string='Description']" position = "after">
+            <xpath expr="//page[@name='description_page']" position = "after">
                 <page string="Production Info">
                     <group>
                         <field name="product_type"/>
