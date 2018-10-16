@@ -15,7 +15,6 @@
                             <field name="date_bb"/>
                         </group>
                         <group>
-
                             <field name="date_rel_deadline"/>
                             <field name="date_release"/>
                             <field name="prod_status"/>
