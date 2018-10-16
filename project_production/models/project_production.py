@@ -1,4 +1,4 @@
-from odoo import api, fields, models, _
+from odoo import models, fields, api
 
 
 PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
@@ -10,6 +10,7 @@ PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
 
 
 class ProjectTask(models.Model):
+    _name = 'project.task.production'
     _inherit = 'project.task'
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                 'Product', required=True, copy=False, default='cnc02')
