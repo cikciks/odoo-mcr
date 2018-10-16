@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from datetime import datetime, date, timedelta
+from dateutil.relativedelta import relativedelta
 
 
 PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
@@ -33,3 +34,4 @@ class ProjectTask(models.Model):
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
         self.date_bb = self.date_prod + self.shelf_life
+        d1 = datetime.strptime(str(self.date_bb), '%Y-%m-%d')
