@@ -14,8 +14,8 @@ class ProjectTask(models.Model):
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                 'Product', required=True, copy=False, default='cnc02')
     lot = fields.Char(required=False, string="Lot Number")
-    weight_pack = fields.Integer(required=False, string="Weight per Pack (kg)")
-    weight_box = fields.Integer(required=False, string="Weight per Box (kg)")
+    weight_pack = fields.Float(digits=(6, 2), string="Weight per Pack (kg)")
+    weight_box = fields.Float(digits=(6, 2),required=False, string="Weight per Box (kg)")
     qty_in_box = fields.Integer(required=False, string="Quantity in Box")
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
     date_prod = fields.Date(required=False, string="Production Date")
@@ -26,5 +26,5 @@ class ProjectTask(models.Model):
     date_sample1 = fields.Date(required=False, string="Ship to MR")
     date_sample2 = fields.Date(required=False, string="Taken by Courier")
     date_sample3 = fields.Date(required=False, string="Received by Lab")
-    sample_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
+    sample_duration = fields.Float(digits=(6, 2), string="Shipment Duration in days")
 
