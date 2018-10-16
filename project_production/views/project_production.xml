@@ -11,9 +11,16 @@
                         <group>
                             <field name="product_type"/>
                             <field name="lot"/>
-                            <field name="weight_pack"/>
-                            <field name="weight_box"/>
-                            <field name="quantity"/>
+                            <group>
+                                <field name="quantity_in_pack"/>
+                                <field name="weight_pack"/>
+                            </group>
+                            <group>
+                                <field name="quantity_in_box"/>
+                                <field name="weight_box"/>
+                            </group>
+
+
                         </group>
                         <group>
                             <field name="date_prod"/>
