@@ -22,4 +22,7 @@ class ProjectTask(models.Model):
     date_release = fields.Date(required=False, string="Release Date")
     date_bb = fields.Date(required=False, string="Best Before Date")
     prod_status = fields.Char(required=False, string="Status")
+    date_sample1 = fields.Char(required=False, string="Sample ship to MR")
+    date_sample2 = fields.Char(required=False, string="Sample taken by Courier")
+    date_sample3 = fields.Char(required=False, string="Sample received by Lab")
 
