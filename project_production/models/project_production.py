@@ -28,3 +28,10 @@ class ProjectTask(models.Model):
     date_sample2 = fields.Date(required=False, string="Taken by Courier", default=fields.Date.today)
     date_sample3 = fields.Date(required=False, string="Received by Lab",  default=fields.Date.today)
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
+
+    @api.depends('date_prod','shelf_life')
+    def _compute_bestbefore(self):
+        today = fDate.from_string(fDate.today())
+        for book in self.filtered('date_release'):
+            delta = (fDate.from_string(book.date_release) - today)
+            book.age_days = delta.days
