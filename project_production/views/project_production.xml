@@ -8,18 +8,20 @@
             <xpath expr="//page[@name='description_page']" position = "after">
                 <page string="Production Info">
                     <group>
-                        <field name="product_type"/>
-                        <field name="lot"/>
-                        <field name="weight_pack"/>
-                        <field name="weight_box"/>
-                        <field name="quantity"/>
-                    </group>
-                    <group>
-                        <field name="date_prod"/>
-                        <field name="date_rel_deadline"/>
-                        <field name="date_release"/>
-                        <field name="date_bb"/>
-                        <field name="prod_status"/>
+                        <group>
+                            <field name="product_type"/>
+                            <field name="lot"/>
+                            <field name="weight_pack"/>
+                            <field name="weight_box"/>
+                            <field name="quantity"/>
+                        </group>
+                        <group>
+                            <field name="date_prod"/>
+                            <field name="date_rel_deadline"/>
+                            <field name="date_release"/>
+                            <field name="date_bb"/>
+                            <field name="prod_status"/>
+                        </group>
                     </group>
                 </page>
             </xpath>
