@@ -23,7 +23,7 @@ class ProjectTask(models.Model):
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
     date_prod = fields.Date(required=True, string="Production Date", default=fields.Date.today)
     date_rel_deadline = fields.Date(required=False, string="Release Deadline")
-    date_release = fields.Date(required=False, string="Release Date")
+    date_release = fields.Date(required=False, string="Release Date", compute='_compute_release')
     date_bb = fields.Date(required=False, string="Best Before Date",compute='_compute_bb')
     prod_status = fields.Char(required=False, string="Status")
     date_sample1 = fields.Date(required=False, string="Ship to MR", default=fields.Date.today)
@@ -35,3 +35,8 @@ class ProjectTask(models.Model):
     def _compute_bb(self):
         expiry_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ self.shelf_life))
         self.date_bb = expiry_date
+
+    @api.onchange('date_prod')
+    def _compute_release(self):
+        release_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 10))
+        self.date_rel_deadline = release_date
