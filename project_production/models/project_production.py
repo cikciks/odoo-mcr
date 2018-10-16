@@ -17,9 +17,9 @@ class ProjectTask(models.Model):
     weight_pack = fields.Char(required=False, string="Weight Pack")
     weight_box = fields.Char(required=False, string="Weight Box")
     quantity = fields.Char(required=False, string="Quantity")
-    date_prod = fields.Char(required=False, string="Production Date")
-    date_rel_deadline = fields.Char(required=False, string="Release Deadline")
-    date_release = fields.Char(required=False, string="Release Date")
-    date_bb = fields.Char(required=False, string="Best Before Date")
+    date_prod = fields.Date(required=False, string="Production Date")
+    date_rel_deadline = fields.Date(required=False, string="Release Deadline")
+    date_release = fields.Date(required=False, string="Release Date")
+    date_bb = fields.Date(required=False, string="Best Before Date")
     prod_status = fields.Char(required=False, string="Status")
 
