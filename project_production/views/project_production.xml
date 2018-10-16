@@ -7,6 +7,19 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='description_page']" position = "after">
                 <page string="Production">
+                    <group string="Production Information">
+                        <group>
+                            <field name="product_type"/>
+                            <field name="lot"/>
+                            <field name="date_prod"/>
+                            <field name="date_bb"/>
+                        </group>
+                        <group>
+                            <field name="date_rel_deadline"/>
+                            <field name="date_release"/>
+                            <field name="prod_status"/>
+                        </group>
+                    </group>
 
                 </page>
             </xpath>
