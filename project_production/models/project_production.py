@@ -14,9 +14,9 @@ class ProjectTask(models.Model):
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                 'Product', required=True, copy=False, default='cnc02')
     lot = fields.Char(required=False, string="Lot Number")
-    weight_pack = fields.Char(required=False, string="Weight Pack")
-    weight_box = fields.Char(required=False, string="Weight Box")
-    quantity = fields.Char(required=False, string="Quantity")
+    weight_pack = fields.Integer(required=False, string="Weight Pack")
+    weight_box = fields.Integer(required=False, string="Weight Box")
+    quantity = fields.Integer(required=False, string="Quantity")
     date_prod = fields.Date(required=False, string="Production Date")
     date_rel_deadline = fields.Date(required=False, string="Release Deadline")
     date_release = fields.Date(required=False, string="Release Date")
