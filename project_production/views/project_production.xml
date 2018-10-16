@@ -22,6 +22,9 @@
                             <field name="date_bb"/>
                             <field name="prod_status"/>
                         </group>
+                    </group string="Sample Shipment Tracking">
+                    <group>
+
                     </group>
                 </page>
             </xpath>
