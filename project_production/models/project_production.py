@@ -14,7 +14,7 @@ class ProjectTask(models.Model):
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                     'Product', required=True, copy=False, default='cnc02')
     lot = fields.Char(required=False, string="Lot Number")
-    weight_pack = fields.Integer(required=False, string="Weight per Pack (kg)")
+    weight_pack = fields.Float(required=False, string="Weight per Pack (kg)")
     weight_box = fields.Integer(required=False, string="Weight per Box (kg)")
     qty_in_box = fields.Integer(required=False, string="Quantity in Box")
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
