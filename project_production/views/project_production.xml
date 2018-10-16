@@ -10,6 +10,7 @@
                     <group string="Production Information">
                         <group>
                             <field name="product_type"/>
+                            <field name="shelf_life"/>
                             <field name="lot"/>
                             <field name="date_prod"/>
                             <field name="date_bb"/>
