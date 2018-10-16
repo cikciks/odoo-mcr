@@ -26,7 +26,6 @@
                         <field name="date_sample3"/>
                         <field name="sample_duration"/>
                     </group>
-
                 </page>
             </xpath>
         </field>
