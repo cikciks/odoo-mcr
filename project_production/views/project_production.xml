@@ -8,7 +8,7 @@
             <xpath expr="//page[@name='description_page']" position = "after">
                 <page string="Production Info">
                     <group>
-
+                        <field name="lot"/>
                     </group>
                 </page>
             </xpath>
