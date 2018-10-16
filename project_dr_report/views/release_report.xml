@@ -18,7 +18,7 @@
                                     <tr>
                                         <td><strong>Batch Code</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.lot"/></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Weight / Pack</strong></td>
