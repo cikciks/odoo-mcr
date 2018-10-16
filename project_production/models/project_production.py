@@ -33,5 +33,5 @@ class ProjectTask(models.Model):
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
-        self.date_bb = self.date_prod + self.shelf_life
-        d1 = datetime.strptime(str(self.date_bb), '%Y-%m-%d')
+        expiry_date = self.date_prod + relativedelta(days=self.shelf_life)
+        self.date_bb = expiry_date
