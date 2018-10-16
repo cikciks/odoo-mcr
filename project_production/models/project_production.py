@@ -10,7 +10,7 @@ PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
 
 
 class ProjectTask(models.Model):
-    _name = 'project.task.production'
+    _name = 'project.task.production.form'
     _inherit = 'project.task'
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                 'Product', required=True, copy=False, default='cnc02')
