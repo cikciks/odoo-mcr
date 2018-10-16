@@ -13,7 +13,7 @@
                                     <tr>
                                         <td><strong>Product</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.product_type"/></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Batch Code</strong></td>
