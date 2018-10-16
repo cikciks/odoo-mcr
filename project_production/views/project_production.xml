@@ -20,6 +20,16 @@
                             <field name="prod_status"/>
                         </group>
                     </group>
+                    <group string="Finished Goods">
+                        <group>
+                            <field name="qty_in_box"/>
+                            <field name="weight_box"/>
+                        </group>
+                        <group>
+                            <field name="qty_in_pack"/>
+                            <field name="weight_pack"/>
+                        </group>
+                    </group>
                     <group string="Sample Shipment Tracking">
                         <field name="date_sample1"/>
                         <field name="date_sample2"/>
