@@ -14,6 +14,13 @@
                         <field name="weight_box"/>
                         <field name="quantity"/>
                     </group>
+                    <group>
+                        <field name="product_type"/>
+                        <field name="lot"/>
+                        <field name="weight_pack"/>
+                        <field name="weight_box"/>
+                        <field name="quantity"/>
+                    </group>
                 </page>
             </xpath>
         </field>
