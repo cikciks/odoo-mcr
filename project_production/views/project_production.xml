@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='description_page']" position = "after">
-                <page string="Production Info">
-                    <group>
+                <page string="Production">
+                    <group string="Production Information">
                         <group>
                             <field name="product_type"/>
                             <field name="lot"/>
