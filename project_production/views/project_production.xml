@@ -34,7 +34,7 @@
                         <field name="date_sample1"/>
                         <field name="date_sample2"/>
                         <field name="date_sample3"/>
-                        <field name="sample_duration"/>
+                        <field name="shipment_duration"/>
                     </group>
                 </page>
             </xpath>
