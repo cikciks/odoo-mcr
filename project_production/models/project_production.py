@@ -23,7 +23,7 @@ class ProjectTask(models.Model):
     date_release = fields.Date(required=False, string="Release Date")
     date_bb = fields.Date(required=False, string="Best Before Date")
     prod_status = fields.Char(required=False, string="Status")
-    date_sample1 = fields.Date(required=False, string="Ship to MR")
+    date_sample1 = fields.Date(required=False, string="Ship to MR", default=datetime.now())
     date_sample2 = fields.Date(required=False, string="Taken by Courier")
     date_sample3 = fields.Date(required=False, string="Received by Lab")
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
