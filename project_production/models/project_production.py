@@ -12,7 +12,7 @@ PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
 class ProjectTask(models.Model):
     _inherit = 'project.task'
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
-                                'Product', required=True, copy=False, default='cnc02')
+                                    'Product', required=True, copy=False, default='cnc02')
     lot = fields.Char(required=False, string="Lot Number")
     weight_pack = fields.Integer(required=False, string="Weight per Pack (kg)")
     weight_box = fields.Integer(required=False, string="Weight per Box (kg)")
