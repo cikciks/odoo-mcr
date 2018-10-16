@@ -11,22 +11,24 @@
                         <group>
                             <field name="product_type"/>
                             <field name="lot"/>
-                            <group>
-                                <field name="qty_in_pack"/>
-                                <field name="weight_pack"/>
-                            </group>
-                            <group>
-                                <field name="qty_in_box"/>
-                                <field name="weight_box"/>
-                            </group>
-
+                            <field name="date_prod"/>
+                            <field name="date_bb"/>
                         </group>
                         <group>
-                            <field name="date_prod"/>
+
                             <field name="date_rel_deadline"/>
                             <field name="date_release"/>
-                            <field name="date_bb"/>
                             <field name="prod_status"/>
+                        </group>
+                    </group>
+                    <group string="Finished Goods">
+                        <group>
+                            <field name="qty_in_pack"/>
+                            <field name="weight_pack"/>
+                        </group>
+                        <group>
+                            <field name="qty_in_box"/>
+                            <field name="weight_box"/>
                         </group>
                     </group>
                     <group string="Sample Shipment Tracking">
