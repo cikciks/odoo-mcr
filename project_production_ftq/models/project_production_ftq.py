@@ -1,7 +1,7 @@
 from odoo import api, fields, models
 
 class ProductionFTQ(models.Model):
-    _name = "project.production.ftq"
+    _name = "production.ftq"
 
     @api.model
     def ftq_list(self):
