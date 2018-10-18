@@ -14,6 +14,4 @@ class ProductionFTQ(models.Model):
 
 class Task(models.Model):
     _inherit = "project.task"
-    subtask_ids = fields.One2many('project.production.ftq', 'task_id', 'Subtask')
-    kanban_subtasks = fields.Text(compute='_compute_kanban_subtasks')
-    default_user = fields.Many2one('res.users', compute='_compute_default_user')
+    ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
