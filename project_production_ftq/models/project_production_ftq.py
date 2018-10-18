@@ -35,4 +35,4 @@ class FTQCheckPoint(models.Model):
     _description = 'Check Point for FTQ'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Char(string='Description')
+    location = fields.Char(string='Location')
