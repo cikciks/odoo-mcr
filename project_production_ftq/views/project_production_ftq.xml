@@ -25,4 +25,22 @@
             </xpath>
         </field>
     </record>
+
+
+    <record model="ir.ui.view" id="view_id">
+        <field name="name">project.production.ftq</field>
+        <field name="model">project.production.ftq</field>
+        <field name="arch" type="xml">
+            <form string="Subtask Message">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="state"/>
+                        <field name="task_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>

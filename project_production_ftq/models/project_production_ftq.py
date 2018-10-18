@@ -15,3 +15,4 @@ class ProductionFTQ(models.Model):
 class Task(models.Model):
     _inherit = "project.task"
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
+    default_user = fields.Many2one('res.users', compute='_compute_default_user')
