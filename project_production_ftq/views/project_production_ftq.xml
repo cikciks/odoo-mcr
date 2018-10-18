@@ -36,6 +36,8 @@
                     <group>
                         <field name="name"/>
                         <field name="state"/>
+                        <field name="area"/>
+                        <field name="note"/>
                         <field name="task_id"/>
                     </group>
                 </sheet>
