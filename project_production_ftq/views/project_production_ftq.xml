@@ -50,7 +50,7 @@
         <field name="name">ftq.checkpoint</field>
         <field name="model">ftq.checkpoint</field>
         <field name="arch" type="xml">
-            <form string="Subtask Message">
+            <form string="Check Point Area">
                 <sheet>
                     <group>
                         <field name="name"/>
