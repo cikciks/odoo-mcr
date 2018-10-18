@@ -3,6 +3,15 @@ from odoo import api, fields, models
 class ProductionFTQ(models.Model):
     _name = "project.production.ftq"
 
+    @api.depends('ftq.checkpoint')
+    def checkpoint_list(self):
+        """:return the value for the check point list"""
+        for rec in self:
+            total_len = self.env['ftq.checkpoint'].search_count([])
+            checkpoint_list_len = len(rec.ftq.checkpoint)
+            if total_len != 0:
+                rec.checkpoint_list = (checkpoint_list_len*100) / total_len
+
     name = fields.Char(required=False, string="Parameter")
     check_point = fields.Char(required=False, string="Check Point")
     state = fields.Char(required=False, string="State")
