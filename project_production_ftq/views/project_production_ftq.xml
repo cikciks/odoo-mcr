@@ -35,7 +35,6 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="user_id"/>
                         <field name="state"/>
                         <field name="task_id"/>
                     </group>
