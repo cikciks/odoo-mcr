@@ -15,6 +15,7 @@ class Task(models.Model):
     _inherit = "project.task"
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
+    score = fields.Char(required=False, string="Score")
 
     @api.multi
     def _compute_default_user(self):
