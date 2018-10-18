@@ -1,7 +1,8 @@
 from odoo import api, fields, models
 
 class ProductionFTQ(models.Model):
-    _name = "production.ftq"
+    _name = "project.production.ftq"
+
     @api.model
-    def oe_method_without_params(self):
+    def ftq_list(self):
         self.create(dict(name='demo.webkul.com'))
