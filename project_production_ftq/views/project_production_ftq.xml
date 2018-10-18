@@ -62,7 +62,7 @@
 
 
     <menuitem name="FTQ List"
-              parent="project.menu_project_config"
+              parent="project_production_menu"
               id="menu_action_view_ftq"
               action="action_view_ftq"/>
 </odoo>
