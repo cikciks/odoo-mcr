@@ -8,7 +8,7 @@
 
     "author": "MCR",
 
-    "depends": ['base', 'project'],
+    "depends": ['project_production'],
     "external_dependencies": {"python": [], "bin": []},
     "data": [
         'views/project_ftq.xml'
