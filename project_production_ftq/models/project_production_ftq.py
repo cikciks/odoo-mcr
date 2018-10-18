@@ -7,7 +7,7 @@ class ProductionFTQ(models.Model):
     _name = "project.production.ftq"
 
     name = fields.Char(required=False, string="Parameter")
-    check_point = fields.Many2many('ftq.checkpoint', string='Check List')
+    check_point = fields.One2many('ftq.checkpoint', string='Check List')
     state = fields.Char(required=False, string="State")
     note = fields.Char(required=False, string="Note")
     project_id = fields.Many2one("project.project", related='task_id.project_id', store=True)
