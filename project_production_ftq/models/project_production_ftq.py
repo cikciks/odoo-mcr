@@ -16,3 +16,16 @@ class Task(models.Model):
     _inherit = "project.task"
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
+
+    @api.multi
+    def _compute_default_user(self):
+        for record in self:
+            if self.env.user != record.user_id and self.env.user != record.create_uid:
+                record.default_user = record.user_id
+            else:
+                if self.env.user != record.user_id:
+                    record.default_user = record.user_id
+                elif self.env.user != record.create_uid:
+                    record.default_user = record.create_uid
+                elif self.env.user == record.create_uid and self.env.user == record.user_id:
+                    record.default_user = self.env.user
