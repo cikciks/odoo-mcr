@@ -9,6 +9,8 @@
                 <page name="ftq_page" string="Finish Time Quality">
                     <group string="FTQ Score">
                         <field name="score"/>
+                        <field name="score"/>
+                        <field name="score"/>
                     </group>
                     <field name="default_user" invisible='True'/>
                     <field name="ftq_ids" context="{'default_user_id': default_user}">
@@ -42,4 +44,9 @@
             </form>
         </field>
     </record>
+
+    <menuitem name="FTQ Parameter"
+              parent="project.menu_project_config"
+              id="menu_action_view_subtask"
+              action="action_view_subtask"/>
 </odoo>
