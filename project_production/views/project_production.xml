@@ -46,9 +46,4 @@
               name="Production"
               parent="project.menu_main_pm"/>
 
-
-    <menuitem id="project_agile_team_menu"
-              name="Teams"
-              parent="project_agile_menu"
-              action="action_project_agile_team"/>
 </odoo>
