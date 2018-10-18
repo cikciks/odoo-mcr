@@ -42,4 +42,8 @@
         </field>
     </record>
 
+    <menuitem id="project_production_menu"
+              name="Production"
+              parent="project.menu_main_pm"/>
+
 </odoo>
