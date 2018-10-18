@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_task_form_dr" model="ir.ui.view">
-      <field name="name">project.task.subtask</field>
-      <field name="model">project.task.subtask</field>
-      <field name="inherit_id" ref="project_task_subtask.view_id"/>
-      <field name="arch" type="xml">
-          <xpath expr="//field[@name='name']" position="after">
-              <field name="result_type"/>
-              <field name="reference"/>
-              <field name="specification"/>
-              <field name="result"/>
-              <field name="remark"/>
-          </xpath>
-      </field>
+        <field name="name">project.task.subtask</field>
+        <field name="model">project.task.subtask</field>
+        <field name="inherit_id" ref="project_task_subtask.view_id"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="result_type"/>
+                <field name="reference"/>
+                <field name="specification"/>
+                <field name="result"/>
+                <field name="remark"/>
+            </xpath>
+        </field>
     </record>
 
     <record model="ir.ui.view" id="subtask_list_view">
@@ -38,5 +38,10 @@
             </xpath>
         </field>
     </record>
+
+    <menuitem id="project_production_menu"
+              name="Production"
+              parent="project.menu_main_pm"/>
+
 
 </odoo>
