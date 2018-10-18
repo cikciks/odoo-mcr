@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form_ftq" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='production_page']" position = "after">
+                <page name="ftq_page" string="Production">
+                    <group string="Production Information">
+                        <group>
+                            <field name="product_type"/>
+                            <field name="lot"/>
+                            <field name="shelf_life"/>
+                            <field name="date_prod"/>
+                            <field name="date_bb"/>
+                        </group>
+                        <group>
+                            <field name="date_rel_deadline"/>
+                            <field name="date_release"/>
+                            <field name="prod_status"/>
+                        </group>
+                    </group>
+                    <group string="Finished Goods">
+                        <group>
+                            <field name="qty_in_box"/>
+                            <field name="weight_box"/>
+                        </group>
+                        <group>
+                            <field name="qty_in_pack"/>
+                            <field name="weight_pack"/>
+                        </group>
+                    </group>
+                    <group string="Sample Shipment Tracking">
+                        <field name="date_sample1"/>
+                        <field name="date_sample2"/>
+                        <field name="date_sample3"/>
+                        <field name="shipment_duration"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
