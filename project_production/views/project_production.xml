@@ -47,4 +47,10 @@
               parent="project.menu_main_pm"/>
 
 
+        <menuitem id="production_list_menu"
+                  name="Production List"
+                  parent="project_production_menu"/>
+
+
+
 </odoo>
