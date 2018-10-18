@@ -41,4 +41,14 @@
             </xpath>
         </field>
     </record>
+
+    <menuitem id="project_production_menu"
+              name="Production"
+              parent="project.menu_main_pm"/>
+
+
+    <menuitem id="project_agile_team_menu"
+              name="Teams"
+              parent="project_agile_menu"
+              action="action_project_agile_team"/>
 </odoo>

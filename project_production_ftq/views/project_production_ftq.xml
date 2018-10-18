@@ -60,6 +60,7 @@
         </field>
     </record>
 
+
     <menuitem name="FTQ List"
               parent="project.menu_project_config"
               id="menu_action_view_ftq"
