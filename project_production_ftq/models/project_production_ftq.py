@@ -29,3 +29,10 @@ class Task(models.Model):
                     record.default_user = record.create_uid
                 elif self.env.user == record.create_uid and self.env.user == record.user_id:
                     record.default_user = self.env.user
+
+class FTQ.CheckPoint(models.Model):
+    _name = 'ftq.checkpoint'
+    _description = 'Check Point for FTQ'
+
+    name = fields.Char(string='Name', required=True)
+    description = fields.Char(string='Description')
