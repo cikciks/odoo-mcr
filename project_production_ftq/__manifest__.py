@@ -11,7 +11,7 @@
     "depends": ['project_production'],
     "external_dependencies": {"python": [], "bin": []},
     "data": [
-        'views/project_ftq.xml'
+        'views/project_production_ftq.xml'
     ],
     "qweb": [
     ],
