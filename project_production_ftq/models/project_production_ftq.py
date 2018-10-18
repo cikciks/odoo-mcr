@@ -1,5 +1,8 @@
 from odoo import api, fields, models
 
+LOC_TYPES = {'mr': 'MR', 'mcr': 'MCR'}
+
+
 class ProductionFTQ(models.Model):
     _name = "project.production.ftq"
 
@@ -36,4 +39,5 @@ class FTQCheckPoint(models.Model):
     _description = 'Check Point for FTQ'
 
     name = fields.Char(string='Name', required=True)
-    location = fields.Char(string='Location')
+    location = fields.Selection([(k, v) for k, v in list(LOC_TYPES.items())],
+                     'Location', required=True, copy=False, default='mcr')
