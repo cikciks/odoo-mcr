@@ -1,0 +1,1 @@
+from project_ftq.views import models
