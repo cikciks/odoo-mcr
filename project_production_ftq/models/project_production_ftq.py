@@ -30,6 +30,7 @@ class Task(models.Model):
                 elif self.env.user == record.create_uid and self.env.user == record.user_id:
                     record.default_user = self.env.user
 
+
 class FTQCheckPoint(models.Model):
     _name = 'ftq.checkpoint'
     _description = 'Check Point for FTQ'
