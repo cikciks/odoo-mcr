@@ -10,13 +10,6 @@
                     <field name="default_user" invisible='True'/>
                     <field name="subtask_ids" context="{'default_user_id': default_user}">
                         <tree editable="bottom"/>
-                            <field name="name"/>
-                            <field name="recolor" invisible='True'/>
-                            <field name="user_id"/>
-                            <field name="state"/>
-                            <field name="hide_button" invisible='True'/>
-                            <field name="reviewer_id"/>
-                            <field name="deadline"/>
                         </tree>
                     </field>
                 </page>
