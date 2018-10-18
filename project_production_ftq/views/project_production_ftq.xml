@@ -9,7 +9,7 @@
                 <page name="ftq_page" string="Finish Time Quality">
                     <field name="default_user" invisible='True'/>
                     <field name="subtask_ids" context="{'default_user_id': default_user}">
-                        <tree editable="bottom"/>
+                        <tree editable="bottom">
                         </tree>
                     </field>
                 </page>
