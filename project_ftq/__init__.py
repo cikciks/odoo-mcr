@@ -1,1 +1,1 @@
-from project_ftq.views import models
+from . import project_ftq
