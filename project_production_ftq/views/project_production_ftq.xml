@@ -16,7 +16,7 @@
                     <field name="ftq_ids" context="{'default_user_id': default_user}">
                         <tree>
                             <field name="name"/>
-                            <field name="area"/>
+                            <field name="check_point"/>
                             <field name="state"/>
                             <field name="note"/>
                         </tree>
