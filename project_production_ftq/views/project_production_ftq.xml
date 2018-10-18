@@ -36,7 +36,7 @@
                     <group>
                         <field name="name"/>
                         <field name="state"/>
-                        <field name="area"/>
+                        <field name="check_point"/>
                         <field name="note"/>
                         <field name="task_id" context="{'default_task_id': task_id}"/>
                     </group>

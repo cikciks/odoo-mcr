@@ -4,7 +4,7 @@ class ProductionFTQ(models.Model):
     _name = "project.production.ftq"
 
     name = fields.Char(required=False, string="Parameter")
-    area = fields.Char(required=False, string="Area")
+    check_point = fields.Char(required=False, string="Area")
     state = fields.Char(required=False, string="State")
     note = fields.Char(required=False, string="Note")
     project_id = fields.Many2one("project.project", related='task_id.project_id', store=True)
