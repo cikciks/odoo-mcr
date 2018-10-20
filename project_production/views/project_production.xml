@@ -22,10 +22,10 @@
                         </group>
                     </group>
                     <group string="Raw Materials, Finished Goods and Samples">
-                        <group col="1">
+                       <div>
                             <field name="weight_rm"/>
-                        </group>
-                        <group>
+                       </div>
+                        <div>
                             <group>
                                 <field name="qty_in_box"/>
                                 <field name="weight_box"/>
@@ -36,7 +36,7 @@
                                 <field name="qty_sample"/>
                                 <field name="weight_sample"/>
                             </group>
-                        </group>
+                        </div>
                     </group>
                     <group string="Sample Shipment Tracking">
                         <field name="date_sample1"/>
