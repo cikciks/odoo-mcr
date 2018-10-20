@@ -32,9 +32,9 @@ class ProjectTask(models.Model):
     date_sample1 = fields.Datetime(required=False, string="Ship to MR", default=fields.Datetime.now)
     date_sample2 = fields.Datetime(required=False, string="Taken by Courier", default=fields.Datetime.now)
     date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.now)
-    keep_duration = fields.Float(digits=(6, 2), help="Keep Duration in days")
-    courier_duration = fields.Float(digits=(6, 2), help="Courier Duration in days")
-    shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
+    keep_duration = fields.Float(digits=(6, 2), help="Keep Duration in hours")
+    courier_duration = fields.Float(digits=(6, 2), help="Courier Duration in hours")
+    shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in hours")
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
@@ -53,11 +53,11 @@ class ProjectTask(models.Model):
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
             sample3_dt = fields.Datetime.from_string(self.date_sample3)
             difference = relativedelta(sample3_dt, sample1_dt)
-            days = difference.days
-            #hours = difference.hours
-            #minutes = difference.minutes
-            #seconds = 0
-            self.shipment_duration = days
+            # days = difference.days
+            hours = difference.hours
+            # minutes = difference.minutes
+            # seconds = 0
+            self.shipment_duration = hours
 
     @api.onchange('date_sample2', 'date_sample3')
     def _compute_courier_duration(self):
@@ -65,11 +65,11 @@ class ProjectTask(models.Model):
             sample2_dt = fields.Datetime.from_string(self.date_sample2)
             sample3_dt = fields.Datetime.from_string(self.date_sample3)
             difference = relativedelta(sample3_dt, sample2_dt)
-            days = difference.days
-            # hours = difference.hours
+            # days = difference.days
+            hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.courier_duration = days
+            self.courier_duration = hours
 
     @api.onchange('date_sample1', 'date_sample2')
     def _compute_keep_duration(self):
@@ -77,8 +77,8 @@ class ProjectTask(models.Model):
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
             sample2_dt = fields.Datetime.from_string(self.date_sample2)
             difference = relativedelta(sample2_dt, sample1_dt)
-            days = difference.days
-            # hours = difference.hours
+            # days = difference.days
+            hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.keep_duration = days
+            self.keep_duration = hours
