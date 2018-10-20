@@ -29,9 +29,9 @@ class ProjectTask(models.Model):
     date_release = fields.Date(required=False, string="Release Date", compute='_compute_release')
     date_bb = fields.Date(required=False, string="Best Before Date",compute='_compute_bb')
     prod_status = fields.Char(required=False, string="Status")
-    date_sample1 = fields.Datetime(required=False, string="Ship to MR", default=fields.Datetime.today)
-    date_sample2 = fields.Datetime(required=False, string="Taken by Courier", default=fields.Datetime.today)
-    date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.today)
+    date_sample1 = fields.Datetime(required=False, string="Ship to MR", default=fields.Datetime.now)
+    date_sample2 = fields.Datetime(required=False, string="Taken by Courier", default=fields.Datetime.now)
+    date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.now)
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
 
     @api.onchange('date_prod','shelf_life')
