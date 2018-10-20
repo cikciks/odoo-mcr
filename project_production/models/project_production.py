@@ -49,8 +49,8 @@ class ProjectTask(models.Model):
     def _compute_ship_duration(self):
         if self.date_sample1 and self.date_sample3:
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
-            sample2_dt = fields.Datetime.from_string(self.date_sample3)
-            difference = relativedelta(sample1_dt, sample2_dt)
+            sample3_dt = fields.Datetime.from_string(self.date_sample3)
+            difference = relativedelta(sample3_dt, sample1_dt)
             days = difference.days
             hours = difference.hours
             minutes = difference.minutes
