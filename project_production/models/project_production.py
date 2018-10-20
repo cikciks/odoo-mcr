@@ -55,3 +55,4 @@ class ProjectTask(models.Model):
             hours = difference.hours
             minutes = difference.minutes
             seconds = 0
+            self.shipment_duration = days
