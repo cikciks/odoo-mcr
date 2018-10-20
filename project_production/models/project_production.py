@@ -23,7 +23,7 @@ class ProjectTask(models.Model):
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
     qty_sample = fields.Integer(required=False, string="Sample Qty (pack)")
     weight_sample = fields.Float(required=False, string="Sample Weight (kg)")
-    weight_rm = fields.Float(required=False, string="Total Production (kg)")
+    weight_rm = fields.Float(required=False, string="Raw Material (kg)")
     date_prod = fields.Date(required=True, string="Production Date", default=fields.Date.today)
     date_rel_deadline = fields.Date(required=False, string="Release Deadline")
     date_release = fields.Date(required=False, string="Release Date", compute='_compute_release')
