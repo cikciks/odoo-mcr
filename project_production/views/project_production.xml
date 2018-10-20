@@ -26,14 +26,16 @@
                             <field name="weight_rm"/>
                         </group>
                         <group>
-                            <field name="qty_in_box"/>
-                            <field name="weight_box"/>
-                            <field name="qty_in_pack"/>
-                            <field name="weight_pack"/>
-                        </group>
-                        <group>
-                            <field name="qty_sample"/>
-                            <field name="weight_sample"/>
+                            <group>
+                                <field name="qty_in_box"/>
+                                <field name="weight_box"/>
+                                <field name="qty_in_pack"/>
+                                <field name="weight_pack"/>
+                            </group>
+                            <group>
+                                <field name="qty_sample"/>
+                                <field name="weight_sample"/>
+                            </group>
                         </group>
                     </group>
                     <group string="Sample Shipment Tracking">
