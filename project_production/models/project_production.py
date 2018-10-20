@@ -59,7 +59,7 @@ class ProjectTask(models.Model):
             self.shipment_duration = days
 
     @api.onchange('date_sample2', 'date_sample3')
-    def _compute_ship_duration(self):
+    def _compute_courier_duration(self):
         if self.date_sample2 and self.date_sample3:
             sample2_dt = fields.Datetime.from_string(self.date_sample2)
             sample3_dt = fields.Datetime.from_string(self.date_sample3)
@@ -68,4 +68,4 @@ class ProjectTask(models.Model):
             # hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.shipment_duration = days
+            self.courier_duration = days
