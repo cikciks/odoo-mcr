@@ -26,7 +26,7 @@
                         <group>
                             <field name="qty_in_box"/>
                             <field name="weight_box"/>
-                             <field name="qty_in_pack"/>
+                            <field name="qty_in_pack"/>
                             <field name="weight_pack"/>
                         </group>
                         <group>
