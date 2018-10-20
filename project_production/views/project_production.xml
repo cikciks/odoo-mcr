@@ -22,7 +22,9 @@
                         </group>
                     </group>
                     <group string="Finished Goods and Samples">
-                        <field name="weight_rm"/>
+                        <group>
+                            <field name="weight_rm"/>
+                        </group>
                         <group>
                             <field name="qty_in_box"/>
                             <field name="weight_box"/>
