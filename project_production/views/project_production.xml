@@ -21,11 +21,11 @@
                             <field name="prod_status"/>
                         </group>
                     </group>
-                    <group string="Raw Materials, Finished Goods and Samples">
-                        <group col="1">
+                    <group string="Raw Materials, Finished Goods and Samples" col="2" colspan="2">
+                        <group>
                             <field name="weight_rm"/>
                         </group>
-                        <group>
+                        <group col="4" colspan="2">
                             <group>
                                 <field name="qty_in_box"/>
                                 <field name="weight_box"/>
