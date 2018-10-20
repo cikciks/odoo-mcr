@@ -32,6 +32,7 @@ class ProjectTask(models.Model):
     date_sample1 = fields.Datetime(required=False, string="Ship to MR", default=fields.Datetime.now)
     date_sample2 = fields.Datetime(required=False, string="Taken by Courier", default=fields.Datetime.now)
     date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.now)
+    courier_duration = fields.Float(digits=(6, 2), help="Courier Duration in days")
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
 
     @api.onchange('date_prod','shelf_life')
@@ -55,4 +56,16 @@ class ProjectTask(models.Model):
             #hours = difference.hours
             #minutes = difference.minutes
             #seconds = 0
+            self.shipment_duration = days
+
+    @api.onchange('date_sample2', 'date_sample3')
+    def _compute_ship_duration(self):
+        if self.date_sample2 and self.date_sample3:
+            sample2_dt = fields.Datetime.from_string(self.date_sample2)
+            sample3_dt = fields.Datetime.from_string(self.date_sample3)
+            difference = relativedelta(sample3_dt, sample2_dt)
+            days = difference.days
+            # hours = difference.hours
+            # minutes = difference.minutes
+            # seconds = 0
             self.shipment_duration = days
