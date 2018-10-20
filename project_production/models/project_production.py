@@ -43,3 +43,15 @@ class ProjectTask(models.Model):
     def _compute_release(self):
         release_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 10))
         self.date_rel_deadline = release_date
+
+
+    @api.onchange('date_sample1', 'date_sample3')
+    def _compute_ship_duration(self):
+        if self.date_sample1 and self.date_sample3:
+            sample1_dt = fields.Datetime.from_string(self.date_sample1)
+            sample2_dt = fields.Datetime.from_string(self.date_sample3)
+            difference = relativedelta(sample1_dt, sample2_dt)
+            days = difference.days
+            hours = difference.hours
+            minutes = difference.minutes
+            seconds = 0
