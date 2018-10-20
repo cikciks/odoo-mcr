@@ -53,11 +53,12 @@ class ProjectTask(models.Model):
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
             sample3_dt = fields.Datetime.from_string(self.date_sample3)
             difference = relativedelta(sample3_dt, sample1_dt)
-            # days = difference.days
+            days = difference.days
             hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.shipment_duration = hours
+            duration = days + (hours/24)
+            self.shipment_duration = duration
 
     @api.onchange('date_sample2', 'date_sample3')
     def _compute_courier_duration(self):
@@ -65,11 +66,12 @@ class ProjectTask(models.Model):
             sample2_dt = fields.Datetime.from_string(self.date_sample2)
             sample3_dt = fields.Datetime.from_string(self.date_sample3)
             difference = relativedelta(sample3_dt, sample2_dt)
-            # days = difference.days
+            days = difference.days
             hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.courier_duration = hours
+            duration = days + (hours / 24)
+            self.courier_duration = duration
 
     @api.onchange('date_sample1', 'date_sample2')
     def _compute_keep_duration(self):
@@ -77,8 +79,9 @@ class ProjectTask(models.Model):
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
             sample2_dt = fields.Datetime.from_string(self.date_sample2)
             difference = relativedelta(sample2_dt, sample1_dt)
-            # days = difference.days
+            days = difference.days
             hours = difference.hours
             # minutes = difference.minutes
             # seconds = 0
-            self.keep_duration = hours
+            duration = days + (hours / 24)
+            self.keep_duration = duration
