@@ -45,7 +45,7 @@
                             <field name="date_sample3"/>
                         </group>
                         <group>
-                            <newline/>
+                            <field name="keep_duration"/>
                             <field name="courier_duration"/>
                             <field name="shipment_duration"/>
                         </group>
