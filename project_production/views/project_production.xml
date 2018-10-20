@@ -39,10 +39,16 @@
                         </group>
                     </group>
                     <group string="Sample Shipment Tracking">
-                        <field name="date_sample1"/>
-                        <field name="date_sample2"/>
-                        <field name="date_sample3"/>
-                        <field name="shipment_duration"/>
+                        <group>
+                            <field name="date_sample1"/>
+                            <field name="date_sample2"/>
+                            <field name="date_sample3"/>
+                        </group>
+                        <group>
+                            <newline/>
+                            <field name="courier_duration"/>
+                            <field name="shipment_duration"/>
+                        </group>
                     </group>
                 </page>
             </xpath>
