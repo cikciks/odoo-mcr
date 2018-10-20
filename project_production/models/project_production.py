@@ -31,7 +31,7 @@ class ProjectTask(models.Model):
     prod_status = fields.Char(required=False, string="Status")
     date_sample1 = fields.Datetime(required=False, string="Ship to MR", default=fields.Datetime.now)
     date_sample2 = fields.Datetime(required=False, string="Taken by Courier", default=fields.Datetime.now)
-    date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.now)
+    date_sample3 = fields.Datetime(required=False, string="Received by Lab",  default=fields.Datetime.now,  compute='_compute_ship_duration')
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in days")
 
     @api.onchange('date_prod','shelf_life')
