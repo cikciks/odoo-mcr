@@ -31,7 +31,6 @@
                         <group>
                             <field name="qty_sample"/>
                             <field name="weight_sample"/>
-
                         </group>
                     </group>
                     <group string="Sample Shipment Tracking">
