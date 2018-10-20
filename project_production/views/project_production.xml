@@ -21,7 +21,7 @@
                             <field name="prod_status"/>
                         </group>
                     </group>
-                    <group string="Finished Goods and Samples">
+                    <group string="Raw Materials, Finished Goods and Samples">
                         <group>
                             <field name="weight_rm"/>
                         </group>
