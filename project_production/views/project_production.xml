@@ -29,8 +29,8 @@
                             <field name="weight_pack"/>
                         </group>
                         <group>
-                            <field name="qty_in_pack"/>
-                            <field name="weight_pack"/>
+                            <field name="qty_sample"/>
+                            <field name="weight_sample"/>
 
                         </group>
                     </group>
