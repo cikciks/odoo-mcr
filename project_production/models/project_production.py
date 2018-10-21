@@ -12,6 +12,11 @@ PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
                  
 """
 
+STATUS_TYPES = {'hold': 'Hold',
+                'release': 'Release',
+                'partial': 'Partial Release',
+                'reject': 'Reject'}
+
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
