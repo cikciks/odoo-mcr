@@ -87,6 +87,24 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="product_form">
+        <field name="name">product.list.form</field>
+        <field name="model">production.product</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="weight_pack"/>
+                        <field name="qty_box"/>
+                        <field name="weight_box" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <record id="action_view_products" model="ir.actions.act_window">
         <field name="name">Product List</field>
