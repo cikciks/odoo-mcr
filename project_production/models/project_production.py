@@ -96,11 +96,11 @@ class ProductionProduct(models.Model):
 
     name = fields.Char(string='Name', required=True)
     code = fields.Char(string='Code', required=True)
-    weight_pack = fields.Float(required=True, string="Weight (kg)")
+    weight_pack = fields.Float(required=True, string="Weight per Pack (kg)")
     qty_box = fields.Float(required=True, string="Quantity in Box (pack)")
-    weight_box = fields.Float(required=False, string="Weight (kq)")
+    weight_box = fields.Float(required=False, string="Weight per Box(kq)")
 
-    @api.onchange('qty_box')
+    @api.onchange('qty_box', 'weight_pack')
     def _compute_weight_box(self):
         if self.qty_box and self.weight_pack:
             self.weight_box = self.qty_box * self.weight_pack
