@@ -80,7 +80,9 @@
             <tree>
                 <field name="name"/>
                 <field name="code"/>
-                <field name="weight"/>
+                <field name="weight_pack"/>
+                <field name="qty_box"/>
+                <field name="weight_box" readonly="1"/>
             </tree>
         </field>
     </record>
