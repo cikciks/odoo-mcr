@@ -49,8 +49,8 @@ class ProjectTask(models.Model):
         self.weight_box = self.product_ids.weight_box
 
     @api.depends('product_ids')
-    def _compute_weight_box(self):
-        self.weight_box = self.product_ids.weight_box
+    def _compute_weight_pack(self):
+        self.weight_pack = self.product_ids.weight_pack
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
