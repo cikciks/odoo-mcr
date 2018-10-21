@@ -20,8 +20,8 @@ class ProjectTask(models.Model):
     product_ids = fields.Many2one('production.product', 'Product')
     shelf_life = fields.Integer(required=False, string="Shelf Life (days)",  compute='_compute_slife')
     lot = fields.Char(required=False, string="Lot Number")
-    weight_pack = fields.Float(required=False, string="Weight per Pack (kg)")
-    weight_box = fields.Float(required=False, string="Weight per Box (kg)")
+    weight_pack = fields.Float(required=False, string="Weight per Pack (kg)", compute='_compute_weight_pack')
+    weight_box = fields.Float(required=False, string="Weight per Box (kg)", compute='_compute_weight_box')
     qty_in_box = fields.Integer(required=False, string="Quantity in Box")
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
     qty_sample = fields.Integer(required=False, string="Sample Qty (pack)")
@@ -46,17 +46,21 @@ class ProjectTask(models.Model):
 
     @api.depends('product_ids')
     def _compute_weight_box(self):
-        self.weight_box = self.product_ids.weight_box * self.qty_in_box
+        self.weight_box = self.product_ids.weight_box
+
+    @api.depends('product_ids')
+    def _compute_weight_box(self):
+        self.weight_box = self.product_ids.weight_box
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
         expiry_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ self.shelf_life))
-        self.date_bb = expiry_date
+    self.date_bb = expiry_date
 
     @api.onchange('date_prod')
     def _compute_release(self):
         release_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 10))
-        self.date_rel_deadline = release_date
+    self.date_rel_deadline = release_date
 
 
     @api.onchange('date_sample1', 'date_sample3')
@@ -89,14 +93,14 @@ class ProjectTask(models.Model):
     def _compute_keep_duration(self):
         if self.date_sample1 and self.date_sample2:
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
-            sample2_dt = fields.Datetime.from_string(self.date_sample2)
-            difference = relativedelta(sample2_dt, sample1_dt)
-            days = difference.days
-            hours = difference.hours
-            # minutes = difference.minutes
-            # seconds = 0
-            duration = days + (hours / 24)
-            self.keep_duration = duration
+        sample2_dt = fields.Datetime.from_string(self.date_sample2)
+        difference = relativedelta(sample2_dt, sample1_dt)
+        days = difference.days
+        hours = difference.hours
+        # minutes = difference.minutes
+        # seconds = 0
+        duration = days + (hours / 24)
+        self.keep_duration = duration
 
 
 class ProductionProduct(models.Model):
