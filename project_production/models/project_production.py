@@ -39,10 +39,16 @@ class ProjectTask(models.Model):
     courier_duration = fields.Float(digits=(6, 2), help="Courier Duration in hours")
     shipment_duration = fields.Float(digits=(6, 2), help="Shipment Duration in hours")
 
+
+    @api.depends('product_ids')
+    def _compute_slife(self):
+        self.shelf_life = self.product_ids.shelf_life
+
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
         expiry_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ self.shelf_life))
         self.date_bb = expiry_date
+
 
     @api.onchange('date_prod')
     def _compute_release(self):
