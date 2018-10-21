@@ -17,7 +17,8 @@
                         </group>
                         <group>
                             <field name="date_rel_deadline"/>
-                            <field name="date_release"/>
+                            <field name="date_release1"/>
+                            <field name="date_release2"/>
                             <field name="prod_status"/>
                         </group>
                     </group>
