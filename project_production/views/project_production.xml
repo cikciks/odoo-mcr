@@ -9,7 +9,7 @@
                 <page name="production_page" string="Production">
                     <group string="Production Information">
                         <group>
-                            <field name="product_type"/>
+                            <field name="product_ids"/>
                             <field name="lot"/>
                             <field name="shelf_life"/>
                             <field name="date_prod"/>
