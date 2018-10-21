@@ -85,3 +85,14 @@ class ProjectTask(models.Model):
             # seconds = 0
             duration = days + (hours / 24)
             self.keep_duration = duration
+
+
+class ProductionFTQ(models.Model):
+    _name = "project.production.ftq"
+
+    name = fields.Char(required=False, string="Parameter")
+    check_point = fields.Many2one('ftq.checkpoint', string='Check Point')
+    state = fields.Char(required=False, string="State")
+    note = fields.Char(required=False, string="Note")
+    project_id = fields.Many2one("project.project", related='task_id.project_id', store=True)
+    task_id = fields.Many2one('project.task', 'Task', ondelete='cascade', required=True, index="1")
