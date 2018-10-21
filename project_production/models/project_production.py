@@ -101,7 +101,6 @@ class ProductionProduct(models.Model):
     weight_box = fields.Float(required=False, string="Weight (kq)")
 
     @api.onchange('qty_box')
-    def _compute_keep_duration(self):
+    def _compute_weight_box(self):
         if self.qty_box and self.weight_pack:
-            weightbox = self.qty_box * self.weight_pack
-            self.weight_box = weightbox
+            self.weight_box = self.qty_box * self.weight_pack
