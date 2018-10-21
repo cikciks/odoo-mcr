@@ -18,7 +18,7 @@ class ProjectTask(models.Model):
     # product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
     #                               'Product', required=True, copy=False, default='cnc02')
     product_ids = fields.Many2one('production.product', 'Product')
-    shelf_life = fields.Integer(required=False, string="Shelf Life (days)")
+    shelf_life = fields.Integer(required=False, string="Shelf Life (days)",  compute='_compute_slife')
     lot = fields.Char(required=False, string="Lot Number")
     weight_pack = fields.Float(required=False, string="Weight per Pack (kg)")
     weight_box = fields.Float(required=False, string="Weight per Box (kg)")
