@@ -22,8 +22,13 @@
                         </group>
                     </group>
                     <group string="Raw Materials, Finished Goods and Samples" col="2" colspan="2">
-                        <group>
-                            <field name="weight_rm"/>
+                        <group col="2" colspan="2">
+                            <group>
+                                <field name="weight_rm"/>
+                            </group>
+                            <group>
+                                <field name="weight_fg"/>
+                            </group>
                         </group>
                         <group col="2" colspan="2">
                             <group>

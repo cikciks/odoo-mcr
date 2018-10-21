@@ -24,7 +24,7 @@ class ProjectTask(models.Model):
     weight_box = fields.Float(required=False, string="Weight per Box (kg)", compute='_compute_weight_box')
     qty_in_box = fields.Integer(required=False, string="Quantity in Box")
     qty_in_pack = fields.Integer(required=False, string="Quantity in Pack")
-    total_weight_fg = fields.Float(required=False, string="Total Weight FG(kg)", compute='_compute_weight_fg')
+    weight_fg = fields.Float(required=False, string="Total Weight FG(kg)", compute='_compute_weight_fg')
     qty_sample = fields.Integer(required=False, string="Sample Qty (pack)")
     weight_sample = fields.Float(required=False, string="Sample Weight (kg)")
     weight_rm = fields.Float(required=False, string="Raw Material (kg)")
@@ -57,7 +57,7 @@ class ProjectTask(models.Model):
     def _compute_weight_fg(self):
         total_weight_pack = self.weight_pack * self.qty_in_pack
         total_weight_box = self.weight_box * self.qty_in_box
-        self.total_weight_fg = total_weight_box + total_weight_pack
+        self.weight_fg = total_weight_box + total_weight_pack
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
