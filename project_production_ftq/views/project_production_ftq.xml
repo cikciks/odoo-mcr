@@ -107,7 +107,7 @@
     -->
 
     <menuitem name="Check Point FTQ"
-              parent="proejct_production.project_production_menu"
+              parent="project_production.project_production_menu"
               id="menu_action_view_checkpoint"
               action="action_view_checkpoint"/>
 </odoo>
