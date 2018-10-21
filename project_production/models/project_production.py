@@ -100,6 +100,7 @@ class ProductionProduct(models.Model):
     qty_box = fields.Float(required=True, string="Qty in Box (pack)")
     weight_box = fields.Float(required=False, string="Weight per Box (kg)", compute='_compute_weight_box')
 
+    @api.one
     @api.onchange('qty_box', 'weight_pack')
     def _compute_weight_box(self):
         if self.qty_box and self.weight_pack:
