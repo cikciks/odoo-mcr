@@ -99,6 +99,7 @@ class ProductionProduct(models.Model):
     weight_pack = fields.Float(required=True, string="Weight per Pack (kg)")
     qty_box = fields.Float(required=True, string="Qty in Box (pack)")
     weight_box = fields.Float(compute='_compute_weight_box', store=True, string="Weight per Box (kg)", )
+    shelf_life = fields.Integer(required=False, string="Shelf Life (days)")
 
     @api.one
     @api.depends('qty_box', 'weight_pack')

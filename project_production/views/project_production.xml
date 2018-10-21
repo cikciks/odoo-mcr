@@ -96,6 +96,7 @@
                     <group>
                         <field name="name"/>
                         <field name="code"/>
+                        <field name="shelf_life"/>
                         <field name="weight_pack"/>
                         <field name="qty_box"/>
                         <field name="weight_box" readonly="1" force_save="1"/>
