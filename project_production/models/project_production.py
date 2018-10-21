@@ -50,18 +50,17 @@ class ProjectTask(models.Model):
 
     @api.depends('product_ids')
     def _compute_weight_pack(self):
-        self.weight_pack = self.product_ids.weight_pack
+            self.weight_pack = self.product_ids.weight_pack
 
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
         expiry_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ self.shelf_life))
-    self.date_bb = expiry_date
+        self.date_bb = expiry_date
 
     @api.onchange('date_prod')
     def _compute_release(self):
         release_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 10))
-    self.date_rel_deadline = release_date
-
+        self.date_rel_deadline = release_date
 
     @api.onchange('date_sample1', 'date_sample3')
     def _compute_ship_duration(self):
@@ -93,14 +92,14 @@ class ProjectTask(models.Model):
     def _compute_keep_duration(self):
         if self.date_sample1 and self.date_sample2:
             sample1_dt = fields.Datetime.from_string(self.date_sample1)
-        sample2_dt = fields.Datetime.from_string(self.date_sample2)
-        difference = relativedelta(sample2_dt, sample1_dt)
-        days = difference.days
-        hours = difference.hours
-        # minutes = difference.minutes
-        # seconds = 0
-        duration = days + (hours / 24)
-        self.keep_duration = duration
+            sample2_dt = fields.Datetime.from_string(self.date_sample2)
+            difference = relativedelta(sample2_dt, sample1_dt)
+            days = difference.days
+            hours = difference.hours
+            # minutes = difference.minutes
+            # seconds = 0
+            duration = days + (hours / 24)
+            self.keep_duration = duration
 
 
 class ProductionProduct(models.Model):
