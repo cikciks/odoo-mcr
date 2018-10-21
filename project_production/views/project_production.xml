@@ -82,7 +82,7 @@
                 <field name="code"/>
                 <field name="weight_pack"/>
                 <field name="qty_box"/>
-                <field name="weight_box" readonly="1"/>
+                <field name="weight_box"/>
             </tree>
         </field>
     </record>
