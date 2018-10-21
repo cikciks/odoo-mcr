@@ -97,7 +97,7 @@ class ProductionProduct(models.Model):
     name = fields.Char(string='Name', required=True)
     code = fields.Char(string='Code', required=True)
     weight_pack = fields.Float(required=True, string="Weight per Pack (kg)")
-    qty_box = fields.Float(required=True, string="Quantity in Box (pack)")
+    qty_box = fields.Float(required=True, string="Qty in Box (pack)")
     weight_box = fields.Float(required=False, string="Weight per Box (kg)", compute='_compute_weight_box')
 
     @api.onchange('qty_box', 'weight_pack')
