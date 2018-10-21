@@ -55,4 +55,21 @@
         </field>
     </record>
 
+
+    <menuitem id="project_production_menu"
+              name="Production"
+              parent="project.menu_main_pm"/>
+
+    <!--
+        <menuitem name="FTQ List"
+                  parent="project_production_menu"
+                  id="menu_action_view_ftq"
+                  action="action_view_ftq"/>
+    -->
+
+    <menuitem name="Check Point FTQ"
+              parent="project_production_menu"
+              id="menu_action_view_checkpoint"
+              action="action_view_checkpoint"/>
+
 </odoo>
