@@ -2,19 +2,22 @@ from odoo import models, fields, api
 from datetime import datetime, date, timedelta
 from dateutil.relativedelta import relativedelta
 
-
+"""
 PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
                  'cnc03': 'Anchor Shredded Cheese Pale 1kg',
                  'cnc09': 'NZ Mozarella Potong 2kg',
                  'cnc11': 'NZ Parmesan Block 0.8kg',
                  'cnc12': 'Shredded Parmesan 1kg',
                  'cnc13': 'Grated Parmesan 1kg'}
+                 
+"""
 
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
     product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
                                     'Product', required=True, copy=False, default='cnc02')
+    product_ids = fields.Many2one('project.product', 'Product')
     shelf_life = fields.Integer(required=False, string="Shelf Life (days)")
     lot = fields.Char(required=False, string="Lot Number")
     weight_pack = fields.Float(required=False, string="Weight per Pack (kg)")
@@ -87,12 +90,12 @@ class ProjectTask(models.Model):
             self.keep_duration = duration
 
 
-class ProductionFTQ(models.Model):
-    _name = "project.production.ftq"
+class ProductionProduct(models.Model):
+    _name = "production.product"
+    _description = 'Product for Production'
 
-    name = fields.Char(required=False, string="Parameter")
-    check_point = fields.Many2one('ftq.checkpoint', string='Check Point')
-    state = fields.Char(required=False, string="State")
-    note = fields.Char(required=False, string="Note")
-    project_id = fields.Many2one("project.project", related='task_id.project_id', store=True)
-    task_id = fields.Many2one('project.task', 'Task', ondelete='cascade', required=True, index="1")
+    name = fields.Char(string='Name', required=True)
+    description = fields.Char(string='Description', required=True)
+    weight= fields.Float(required=False, string="Sample Weight (kg)")
+    location = fields.Selection([(k, v) for k, v in list(LOC_TYPES.items())],
+                                'Location', required=True, copy=False, default='mcr')
