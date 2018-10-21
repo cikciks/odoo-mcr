@@ -35,8 +35,8 @@ class ProjectTask(models.Model):
     weight_rm = fields.Float(required=False, string="Raw Material (kg)")
     date_prod = fields.Date(required=True, string="Production Date", default=fields.Date.today)
     date_rel_deadline = fields.Date(required=False, string="Release Deadline")
-    date_release1 = fields.Date(required=False, string="Release Date")
-    date_release2 = fields.Date(required=False, string="Release Date")
+    date_release1 = fields.Date(required=False, string="Release Date 1")
+    date_release2 = fields.Date(required=False, string="Release Date 2")
     date_bb = fields.Date(required=False, string="Best Before Date",compute='_compute_bb')
     prod_status = fields.Selection([(k, v) for k, v in list(STATUS_TYPES.items())],
                                    'Status', required=True, copy=False, default='hold')
