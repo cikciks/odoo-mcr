@@ -44,11 +44,14 @@ class ProjectTask(models.Model):
     def _compute_slife(self):
         self.shelf_life = self.product_ids.shelf_life
 
+    @api.depends('product_ids')
+    def _compute_weight_box(self):
+        self.weight_box = self.product_ids.weight_box * self.qty_in_box
+
     @api.onchange('date_prod','shelf_life')
     def _compute_bb(self):
         expiry_date = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ self.shelf_life))
         self.date_bb = expiry_date
-
 
     @api.onchange('date_prod')
     def _compute_release(self):
