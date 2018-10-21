@@ -15,8 +15,8 @@ PRODUCT_TYPES = {'cnc02': 'Anchor Cheddar Potong 2kg',
 
 class ProjectTask(models.Model):
     _inherit = 'project.task'
-    product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
-                                    'Product', required=True, copy=False, default='cnc02')
+    # product_type = fields.Selection([(k, v) for k, v in list(PRODUCT_TYPES.items())],
+    #                               'Product', required=True, copy=False, default='cnc02')
     product_ids = fields.Many2one('project.product', 'Product')
     shelf_life = fields.Integer(required=False, string="Shelf Life (days)")
     lot = fields.Char(required=False, string="Lot Number")
@@ -95,7 +95,5 @@ class ProductionProduct(models.Model):
     _description = 'Product for Production'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Char(string='Description', required=True)
-    weight= fields.Float(required=False, string="Sample Weight (kg)")
-    location = fields.Selection([(k, v) for k, v in list(LOC_TYPES.items())],
-                                'Location', required=True, copy=False, default='mcr')
+    code = fields.Char(string='Code', required=True)
+    weight = fields.Float(required=False, string="Weight (kg)")
