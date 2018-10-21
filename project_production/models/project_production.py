@@ -105,5 +105,5 @@ class ProductionProduct(models.Model):
     def _compute_weight_box(self):
         if self.qty_box and self.weight_pack:
             self.weight_box = self.qty_box * self.weight_pack
-        #for record in self:
+        # for record in self:
         #    record.weight_box = record.qty_box * record.weight_pack
