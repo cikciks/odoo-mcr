@@ -26,6 +26,7 @@ class Task(models.Model):
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
     score = fields.Char(required=False, string="Score")
     total_parameter = fields.Integer(compute='_count_total_parameter')
+    total_point = fields.Integer(compute='_count_total_point')
 
     @api.multi
     def _compute_default_user(self):
@@ -44,6 +45,11 @@ class Task(models.Model):
     def _count_total_parameter(self):
         if self.ftq_ids:
             self.total_parameter = self.ftq_ids.search_count([])
+
+    @api.one
+    def _count_total_parameter(self):
+        if self.ftq_ids:
+            self.total_parameter = self.ftq_ids.search_count(['mark_point', '=', True])
 
 
 class FTQParameter(models.Model):
