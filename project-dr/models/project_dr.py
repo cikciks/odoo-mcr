@@ -20,3 +20,6 @@ class ProjectTaskSubtask(models.Model):
     specification = fields.Char(required=False, string="Specification")
     result = fields.Char(required=False, string="Result")
     remark = fields.Char(required=False, string="Remark")
+
+
+

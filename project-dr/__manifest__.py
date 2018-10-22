@@ -1,6 +1,6 @@
 {
-    "name": """Project Task - Document Release Field""",
-    "summary": """add field for Document Release""",
+    "name": """Project Task - Production  Document Release""",
+    "summary": """add Document Release Information""",
     "category": """Project Management""",
     "images": ['images/checklist_main.png'],
     "version": "11.0.1.0.0",
