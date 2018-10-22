@@ -133,7 +133,7 @@ class Task(models.Model):
             result_string3 = ''
             for subtask in record.subtask_ids:
                 bounding_length = 25
-                tmp_list = (subtask.name.id).split()
+                tmp_list = (subtask.name.name).split()
                 for index in range(len(tmp_list)):
                     if len(tmp_list[index]) > bounding_length:
                         tmp_list[index] = tmp_list[index][:bounding_length] + '...'
