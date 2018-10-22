@@ -27,15 +27,15 @@ class ProjectTaskSubtask(models.Model):
         result = super(ProjectTaskSubtask, self).write(vals)
         for r in self:
             if vals.get('state'):
-                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id)
+                r.task_id.send_subtask_email(r.name.id, r.state, r.reviewer_id.id, r.user_id.id)
                 if self.env.user != r.reviewer_id and self.env.user != r.user_id:
                     raise UserError(_('Only users related to that subtask can change state.'))
             if vals.get('name'):
-                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id, old_name=old_names[r.id])
+                r.task_id.send_subtask_email(r.name.id, r.state, r.reviewer_id.id, r.user_id.id, old_name=old_names[r.id])
                 if self.env.user != r.reviewer_id and self.env.user != r.user_id:
                     raise UserError(_('Only users related to that subtask can change state.'))
             if vals.get('user_id'):
-                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id)
+                r.task_id.send_subtask_email(r.name.id, r.state, r.reviewer_id.id, r.user_id.id)
         return result
 
     @api.model
@@ -43,7 +43,7 @@ class ProjectTaskSubtask(models.Model):
         result = super(ProjectTaskSubtask, self).create(vals)
         vals = self._add_missing_default_values(vals)
         task = self.env['project.task'].browse(vals.get('task_id'))
-        task.send_subtask_email(vals['name.name'], vals['state'], vals['reviewer_id'], vals['user_id'])
+        task.send_subtask_email(vals['name'], vals['state'], vals['reviewer_id'], vals['user_id'])
         return result
 
 class DRParameter(models.Model):
