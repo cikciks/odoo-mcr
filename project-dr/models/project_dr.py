@@ -21,14 +21,22 @@ class ProjectTaskSubtask(models.Model):
     result = fields.Char(required=False, string="Result")
     remark = fields.Char(required=False, string="Remark")
 
-    @api.model
-    def create(self, vals):
-        result = super(ProjectTaskSubtask, self).create(vals)
-        vals = self._add_missing_default_values(vals)
-        task = self.env['project.task'].browse(vals.get('task_id'))
-        task.send_subtask_email(vals['name.name'], vals['state'], vals['reviewer_id'], vals['user_id'])
+    @api.multi
+    def write(self, vals):
+        old_names = dict(list(zip(self.mapped('id'), self.mapped('name'))))
+        result = super(ProjectTaskSubtask, self).write(vals)
+        for r in self:
+            if vals.get('state'):
+                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id)
+                if self.env.user != r.reviewer_id and self.env.user != r.user_id:
+                    raise UserError(_('Only users related to that subtask can change state.'))
+            if vals.get('name'):
+                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id, old_name=old_names[r.id])
+                if self.env.user != r.reviewer_id and self.env.user != r.user_id:
+                    raise UserError(_('Only users related to that subtask can change state.'))
+            if vals.get('user_id'):
+                r.task_id.send_subtask_email(r.name.name, r.state, r.reviewer_id.id, r.user_id.id)
         return result
-
 
 class DRParameter(models.Model):
     _name = 'dr.parameter'
