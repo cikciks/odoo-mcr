@@ -26,7 +26,7 @@ class Task(models.Model):
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
     score = fields.Char(required=False, string="Score")
     total_parameter = fields.Integer(compute='_count_total_parameter')
-    total_point = fields.Integer(compute='_count_total_point')
+    total_point = fields.Char(required=False, string="Score")
 
     @api.multi
     def _compute_default_user(self):
