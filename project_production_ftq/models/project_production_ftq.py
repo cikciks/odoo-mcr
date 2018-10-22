@@ -43,7 +43,7 @@ class Task(models.Model):
     @api.one
     def _count_total_parameter(self):
         if self.ftq_ids:
-            self.total_parameter = self.ftq_ids.search_count([])
+            self.total_parameter = len(self.ftq_ids.search_count([]))
 
 
 class FTQParameter(models.Model):
