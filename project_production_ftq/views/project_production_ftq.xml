@@ -35,7 +35,7 @@
                 <sheet>
                     <group>
                         <field name="parameter"/>
-                        <field name="state"/>
+                        <field name="mark_point"/>
                         <field name="check_point"/>
                         <field name="note"/>
                         <field name="task_id" context="{'default_task_id': task_id}"/>
