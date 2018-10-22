@@ -16,11 +16,11 @@ class ProductionFTQ(models.Model):
 
     @api.multi
     def _compute_checkpoint(self):
-        for record in self :
-            if self.check_point:
-                record.id = self.parameter.checkpoint_ids
-            # record = self.env['ftq.checkpoint'].browse[self.parameter.checkpoint_ids]
-            # record.write('check_point': id)
+        # for record in self :
+        if self.check_point:
+            # record.id = self.parameter.checkpoint_ids
+            record = self.env['ftq.checkpoint'].browse[self.parameter.checkpoint_ids]
+            record.write('check_point': 'id'')
 
 
 class Task(models.Model):
