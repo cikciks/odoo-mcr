@@ -33,6 +33,13 @@ class Task(models.Model):
                 elif self.env.user == record.create_uid and self.env.user == record.user_id:
                     record.default_user = self.env.user
 
+class FTQParameter(models.Model):
+    _name = 'ftq.parameter'
+    _description = 'Parameter for FTQ'
+
+    name = fields.Char(string='Name', required=True)
+    checkpoint_ids = fields.Many2one('ftq.checkpoint', 'Product')
+
 
 class FTQCheckPoint(models.Model):
     _name = 'ftq.checkpoint'

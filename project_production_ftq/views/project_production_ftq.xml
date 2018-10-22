@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="project.view_task_form2"/>
         <field name="arch" type="xml">
             <xpath expr="//page[@name='production_page']" position = "after">
-                <page name="ftq_page" string="Finish Time Quality">
+                <page name="ftq_page" string="First Time Quality">
                     <group string="FTQ Score">
                         <field name="score"/>
                         <field name="score"/>
@@ -42,6 +42,35 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="ftq_parameter_form">
+        <field name="name">ftq.parameter</field>
+        <field name="model">ftq.parameter</field>
+        <field name="arch" type="xml">
+            <form string="Check Point Area">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="checkpoint_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="ftq_parameter_tree">
+        <field name="name">ftq.parameter</field>
+        <field name="model">ftq.parameter</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="checkpoint_ids"/>
+            </tree>
         </field>
     </record>
 
@@ -91,8 +120,24 @@
         </record>
         -->
 
+    <record id="action_view_parameter" model="ir.actions.act_window">
+        <field name="name">FTQ Parameter List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ftq.parameter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create New Parameter
+            </p>
+        </field>
+    </record>
+
+
     <record id="action_view_checkpoint" model="ir.actions.act_window">
-        <field name="name">Check Point List</field>
+        <field name="name">FTQ Check Point List</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">ftq.checkpoint</field>
         <field name="view_type">form</field>
@@ -118,8 +163,14 @@
               action="action_view_ftq"/>
     -->
 
-    <menuitem name="Check Point FTQ"
+    <menuitem name="FTQ Check Point Area"
               parent="project_production.project_production_menu"
               id="menu_action_view_checkpoint"
               action="action_view_checkpoint"/>
+
+    <menuitem name="FTQ Parameter"
+              parent="project_production.project_production_menu"
+              id="menu_action_view_parameter"
+              action="action_view_parameter"/>
+
 </odoo>
