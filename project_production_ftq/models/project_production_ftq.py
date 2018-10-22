@@ -26,7 +26,7 @@ class Task(models.Model):
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
     total_parameter = fields.Integer(compute='_count_total_parameter')
     total_point = fields.Integer(compute='_count_total_point')
-    score = fields.Float(compute='_compute_score')
+    score = fields.Float(compute='_compute_score', string='Score (%)')
 
     @api.multi
     def _compute_default_user(self):
@@ -53,7 +53,7 @@ class Task(models.Model):
 
     @api.depends('total_parameter','total_point')
     def _compute_score(self):
-        self.score = self.total_point / self.total_parameter
+        self.score = (self.total_point / self.total_parameter) * 100
 
 
 class FTQParameter(models.Model):
