@@ -13,8 +13,8 @@ RESULT_TYPES = {'material': 'Incoming Analysis Results',
 
 class ProjectTaskSubtask(models.Model):
     _inherit = "project.task.subtask"
-    # name = fields.Many2one('dr.parameter', string='Parameter')
-    result_type = fields.Selection([(k, v) for k, v in list(RESULT_TYPES.items())],
+    name = fields.Many2one('dr.parameter', string='Parameter')
+    # result_type = fields.Selection([(k, v) for k, v in list(RESULT_TYPES.items())],
                              'Analysis Type', required=True, copy=False, default='material')
     reference = fields.Char(required=False, string="Reference")
     specification = fields.Char(required=False, string="Specification")
