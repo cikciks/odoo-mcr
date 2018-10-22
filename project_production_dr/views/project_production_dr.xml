@@ -71,6 +71,7 @@
                     <group>
                         <field name="name"/>
                         <field name="parameter_type"/>
+                        <field name="specification"/>
                     </group>
                 </sheet>
             </form>

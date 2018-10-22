@@ -197,6 +197,7 @@ class DRParameter(models.Model):
 
     name = fields.Char(string='Name', required=True)
     parameter_type = fields.Many2one('dr.parameter_type', 'Parameter Type')
+    specification = fields.Char(string='Specification', required=False)
 
 
 class DRParameterType(models.Model):
