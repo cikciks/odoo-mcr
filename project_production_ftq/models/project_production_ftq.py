@@ -6,7 +6,8 @@ LOC_TYPES = {'mr': 'MR', 'mcr': 'MCR'}
 class ProductionFTQ(models.Model):
     _name = "project.production.ftq"
 
-    name = fields.Char(required=False, string="Parameter")
+    # name = fields.Char(required=False, string="Parameter")
+    parameter = fields.Many2one('ftq.parameter', string='Parameter')
     check_point = fields.Many2one('ftq.checkpoint', string='Check Point')
     state = fields.Char(required=False, string="State")
     note = fields.Char(required=False, string="Note")
