@@ -31,7 +31,6 @@
     <record model="ir.ui.view" id="subtask_list_view">
         <field name="name">subtask.list.form</field>
         <field name="model">project.production.dr</field>
-        <field name="inherit_id" ref="project_production_dr.subtask_list_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="result_type"/>
@@ -42,7 +41,6 @@
     <record id="project_task_subtask_view_search" model="ir.ui.view">
         <field name="name">project.production.dr.filter</field>
         <field name="model">project.production.dr</field>
-        <field name="inherit_id" ref="project_production_dr.project_task_subtask_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
                 <!-- This field will show up on the default filters
