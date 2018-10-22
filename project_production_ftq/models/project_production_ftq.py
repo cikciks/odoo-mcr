@@ -24,9 +24,9 @@ class Task(models.Model):
     _inherit = "project.task"
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
-    score = fields.Char(required=False, string="Score")
     total_parameter = fields.Integer(compute='_count_total_parameter')
     total_point = fields.Integer(compute='_count_total_point')
+    score = fields.Float(compute='_compute_score')
 
     @api.multi
     def _compute_default_user(self):
@@ -50,6 +50,10 @@ class Task(models.Model):
     @api.depends('ftq_ids')
     def _count_total_point(self):
         self.total_point = self.ftq_ids.search_count([('mark_point', '=', True)])
+
+    @api.depends('total_parameter','total_point')
+    def _compute_score(self):
+        self.score = self.total_point / self.total_parameter
 
 
 class FTQParameter(models.Model):
