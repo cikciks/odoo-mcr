@@ -41,7 +41,7 @@
 
 
     <record id="action_view_parameter" model="ir.actions.act_window">
-        <field name="name">FTQ Parameter List</field>
+        <field name="name">Document Release Parameter</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">dr.parameter</field>
         <field name="view_type">form</field>
@@ -56,7 +56,7 @@
     </record>
 
     <record id="action_view_parameter_type" model="ir.actions.act_window">
-        <field name="name">FTQ Parameter List</field>
+        <field name="name">Document Release Parameter Type</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">dr.parameter_type</field>
         <field name="view_type">form</field>
