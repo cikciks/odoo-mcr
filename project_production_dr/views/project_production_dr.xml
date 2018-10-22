@@ -42,7 +42,7 @@
         </field>
     </record>
 
-    <record id="project_task_subtask_view_search" model="ir.ui.view">
+    <record id="project_production_dr_view_search" model="ir.ui.view">
         <field name="name">project.production.dr.filter</field>
         <field name="model">project.production.dr</field>
         <field name="arch" type="xml">
@@ -60,6 +60,18 @@
             </search>
         </field>
     </record>
+
+    <record id="action_view_subtask" model="ir.actions.act_window">
+        <field name="name">Checklist</field>
+        <field name="res_model">project.production_dr</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{
+            'search_default_my_subtask': 1,
+            'search_default_done_subtask': 1,
+            }
+        </field>
+    </record>
+
 
 
     <record model="ir.ui.view" id="dr_parameter_form">
