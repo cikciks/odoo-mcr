@@ -31,7 +31,7 @@
         <field name="name">project.production.ftq</field>
         <field name="model">project.production.ftq</field>
         <field name="arch" type="xml">
-            <form string="Subtask Message">
+            <form string="First Time Quality">
                 <sheet>
                     <group>
                         <field name="name"/>
