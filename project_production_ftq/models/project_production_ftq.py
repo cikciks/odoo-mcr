@@ -42,14 +42,14 @@ class Task(models.Model):
                     record.default_user = self.env.user
 
     @api.one
+    @api.depends('ftq_ids')
     def _count_total_parameter(self):
-        if self.ftq_ids:
-            self.total_parameter = self.ftq_ids.search_count([])
+        self.total_parameter = self.ftq_ids.search_count([])
 
     @api.one
+    @api.depends('ftq_ids')
     def _count_total_point(self):
-        if self.ftq_ids:
-            self.total_point = self.ftq_ids.search([('mark_point', '=', True)])
+        self.total_point = self.ftq_ids.search([('mark_point', '=', True)])
 
 
 class FTQParameter(models.Model):
