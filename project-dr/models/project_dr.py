@@ -21,6 +21,14 @@ class ProjectTaskSubtask(models.Model):
     result = fields.Char(required=False, string="Result")
     remark = fields.Char(required=False, string="Remark")
 
+    @api.model
+    def create(self, vals):
+        result = super(ProjectTaskSubtask, self).create(vals)
+        vals = self._add_missing_default_values(vals)
+        task = self.env['project.task'].browse(vals.get('task_id'))
+        task.send_subtask_email(vals['name.name'], vals['state'], vals['reviewer_id'], vals['user_id'])
+        return result
+
 
 class DRParameter(models.Model):
     _name = 'dr.parameter'
