@@ -18,7 +18,7 @@ class ProductionFTQ(models.Model):
     def _compute_checkpoint(self):
         if self.check_point:
             record = self.env['ftq.checkpoint'].browse[self.parameter.checkpoint_ids]
-            record.write('check_point': id)
+            # record.write('check_point': id)
 
 
 class Task(models.Model):
