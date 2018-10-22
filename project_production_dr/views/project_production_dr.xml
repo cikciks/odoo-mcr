@@ -86,10 +86,10 @@
             <tree>
                 <field name="name"/>
                 <field name="parameter_type"/>
+                <field name="specification"/>
             </tree>
         </field>
     </record>
-
 
 
     <record model="ir.ui.view" id="dr_parameter_type_form">
