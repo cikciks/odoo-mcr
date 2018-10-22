@@ -11,10 +11,7 @@
     "depends": ['base', 'project'],
     "external_dependencies": {"python": [], "bin": []},
     "data": [
-        'security/ir.model.access.csv',
-        'views/project_production_dr.xml',
-        'data/subscription_template.xml',
-        'security/project_security.xml'
+        'views/project_production_dr.xml'
     ],
     "qweb": [
     ],
