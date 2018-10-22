@@ -39,4 +39,47 @@
         </field>
     </record>
 
+
+    <record id="action_view_parameter" model="ir.actions.act_window">
+        <field name="name">FTQ Parameter List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr.parameter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create New Parameter
+            </p>
+        </field>
+    </record>
+
+    <record id="action_view_parameter_type" model="ir.actions.act_window">
+        <field name="name">FTQ Parameter List</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr.parameter_type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create New Parameter Type
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="DR Parameter"
+              parent="project_production.project_production_menu"
+              id="menu_action_view_parameter"
+              action="action_view_parameter"/>
+
+    <menuitem name="DR Parameter Type"
+              parent="project_production.project_production_menu"
+              id="menu_action_view_parameter_type"
+              action="action_view_parameter_type"/>
+
+
+
 </odoo>
