@@ -25,6 +25,7 @@ class Task(models.Model):
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
     score = fields.Char(required=False, string="Score")
+    total_parameter = fields.Integer(compute='_count_total_parameter')
 
     @api.multi
     def _compute_default_user(self):
@@ -38,6 +39,12 @@ class Task(models.Model):
                     record.default_user = record.create_uid
                 elif self.env.user == record.create_uid and self.env.user == record.user_id:
                     record.default_user = self.env.user
+
+    @api.one
+    def _count_total_parameter(self):
+        if self.ftq_ids:
+            return len(self.ftq_ids)
+
 
 class FTQParameter(models.Model):
     _name = 'ftq.parameter'
