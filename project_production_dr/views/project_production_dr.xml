@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form_dr" model="ir.ui.view">
+        <field name="name">project.production.dr</field>
+        <field name="model">project.production.dr</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr = "//page[1]" position = "before">
+                <page string="Checklist">
+                    <field name="default_user" invisible='True'/>
+                    <field name="subtask_ids" context="{'default_user_id': default_user}">
+                        <tree editable="bottom" decoration-danger="recolor == True" decoration-muted="state == 'cancelled'" decoration-success="state == 'done'" decoration-info="state == 'waiting'">
+                            <field name="name"/>
+                            <field name="recolor" invisible='True'/>
+                            <field name="user_id"/>
+                            <field name="state"/>
+                            <field name="hide_button" invisible='True'/>
+                            <button name="change_state_done" string="Change state to DONE" type="object" icon="fa-check" attrs="{'invisible': ['|', ('state', 'in',['done', 'cancelled']), ('hide_button', '=', True)]}"/>
+                            <button name="change_state_todo" string="Change state to TODO" type="object" icon="fa-caret-square-o-right" attrs="{'invisible': [ '|',('state', '=', 'todo'), ('hide_button', '=', True)]}"/>
+                            <button name="change_state_waiting" type="object" string="Change state to WAITING" icon="fa-pause" attrs="{'invisible': [ '|',('state', '=', 'waiting'), ('hide_button', '=', True)]}"/>
+                            <button name="change_state_cancelled" type="object" string="Change state to CANCELLED" icon="fa-ban" attrs="{'invisible': [ '|',('state', '=', 'cancelled'), ('hide_button', '=', True)]}"/>
+                            <field name="reviewer_id"/>
+                            <field name="deadline"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="subtask_list_view">
+        <field name="name">subtask.list.form</field>
+        <field name="model">project.production.dr</field>
+        <field name="inherit_id" ref="project_production_dr.subtask_list_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="result_type"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_task_subtask_view_search" model="ir.ui.view">
+        <field name="name">project.production.dr.filter</field>
+        <field name="model">project.production.dr</field>
+        <field name="inherit_id" ref="project_production_dr.project_task_subtask_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <!-- This field will show up on the default filters
+                     &lt; is the XML encoding for < and &gt; is the XML encoding for > -->
+                <filter string="Analysis Type" domain="[]" context="{'group_by':'result_type'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="dr_parameter_form">
+        <field name="name">dr.parameter</field>
+        <field name="model">dr.parameter</field>
+        <field name="arch" type="xml">
+            <form string="Parameter">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="parameter_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="dr_parameter_tree">
+        <field name="name">dr.parameter</field>
+        <field name="model">dr.parameter</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="parameter_type"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="dr_parameter_type_form">
+        <field name="name">dr.parameter_type</field>
+        <field name="model">dr.parameter_type</field>
+        <field name="arch" type="xml">
+            <form string="Parameter Type">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="dr_parameter_type_tree">
+        <field name="name">dr.parameter_type</field>
+        <field name="model">dr.parameter_type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_view_parameter" model="ir.actions.act_window">
+        <field name="name">Document Release Parameter</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr.parameter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create New Parameter
+            </p>
+        </field>
+    </record>
+
+    <record id="action_view_parameter_type" model="ir.actions.act_window">
+        <field name="name">Document Release Parameter Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr.parameter_type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create New Parameter Type
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="DR Parameter"
+              parent="project_production.project_production_menu"
+              id="menu_action_view_parameter"
+              action="action_view_parameter"/>
+
+    <menuitem name="DR Parameter Type"
+              parent="project_production.project_production_menu"
+              id="menu_action_view_parameter_type"
+              action="action_view_parameter_type"/>
+
+
+
+</odoo>
