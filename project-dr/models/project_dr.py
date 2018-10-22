@@ -22,4 +22,18 @@ class ProjectTaskSubtask(models.Model):
     remark = fields.Char(required=False, string="Remark")
 
 
+class DRParameter(models.Model):
+    _name = 'dr.parameter'
+    _description = 'Parameter for Document Release'
+
+    name = fields.Char(string='Name', required=True)
+    parameter_type = fields.Many2one('dr.parameter_type', 'Parameter Type')
+
+
+class DRParameterType(models.Model):
+    _name = 'dr.parameter_type'
+    _description = 'Parameter Type'
+
+    name = fields.Char(string='Name', required=True)
+
 
