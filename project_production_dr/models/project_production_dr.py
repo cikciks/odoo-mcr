@@ -9,6 +9,11 @@ SUBTASK_STATES = {'done': 'Done',
                   'waiting': 'Waiting',
                   'cancelled': 'Cancelled'}
 
+RESULT_TYPES = {'material': 'Incoming Analysis Results',
+                'production': 'Online Testing Analysis Results',
+                'laboratory': 'Finished Product Analysis Result',
+                'enviroment': 'Pathogen & Hygiene Monitoring Result'}
+
 
 class ProductionDR(models.Model):
     _name = "project.production.dr"
