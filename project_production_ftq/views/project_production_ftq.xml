@@ -8,7 +8,7 @@
             <xpath expr="//page[@name='production_page']" position = "after">
                 <page name="ftq_page" string="First Time Quality">
                     <group string="FTQ Score">
-                        <field name="score"/>
+                        <field name="total_parameter"/>
                         <field name="score"/>
                         <field name="score"/>
                     </group>
