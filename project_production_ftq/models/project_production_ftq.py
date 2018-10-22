@@ -38,7 +38,7 @@ class FTQParameter(models.Model):
     _description = 'Parameter for FTQ'
 
     name = fields.Char(string='Name', required=True)
-    checkpoint_ids = fields.Many2one('ftq.checkpoint', 'Product')
+    checkpoint_ids = fields.Many2one('ftq.checkpoint', 'Check Point Area')
 
 
 class FTQCheckPoint(models.Model):
