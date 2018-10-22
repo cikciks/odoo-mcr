@@ -9,7 +9,7 @@ class ProductionFTQ(models.Model):
     # name = fields.Char(required=False, string="Parameter")
     parameter = fields.Many2one('ftq.parameter', string='Parameter')
     check_point = fields.Many2one('ftq.checkpoint', compute='_compute_check_point', string='Check Point')
-    state = fields.Char(required=False, string="State")
+    mark_point = fields.Boolean(required=False, string="Point")
     note = fields.Char(required=False, string="Note")
     project_id = fields.Many2one("project.project", related='task_id.project_id', store=True)
     task_id = fields.Many2one('project.task', 'Task', ondelete='cascade', required=True, index="1")

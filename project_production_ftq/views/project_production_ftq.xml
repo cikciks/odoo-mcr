@@ -17,7 +17,7 @@
                         <tree editable="bottom" >
                             <field name="parameter"/>
                             <field name="check_point"/>
-                            <field name="state"/>
+                            <field name="mark_point"/>
                             <field name="note"/>
                         </tree>
                     </field>
