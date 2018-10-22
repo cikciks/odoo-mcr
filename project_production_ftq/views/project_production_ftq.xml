@@ -46,7 +46,7 @@
     </record>
 
 
-    <record model="ir.ui.view" id="view_id">
+    <record model="ir.ui.view" id="ftq_checkpoint_form">
         <field name="name">ftq.checkpoint</field>
         <field name="model">ftq.checkpoint</field>
         <field name="arch" type="xml">
