@@ -20,7 +20,6 @@ class ProductionFTQ(models.Model):
             self.check_point = self.parameter.checkpoint_ids
 
 
-
 class Task(models.Model):
     _inherit = "project.task"
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
