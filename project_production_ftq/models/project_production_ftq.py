@@ -15,9 +15,9 @@ class ProductionFTQ(models.Model):
     task_id = fields.Many2one('project.task', 'Task', ondelete='cascade', required=True, index="1")
 
     @api.one
+    @api.depends('parameter')
     def _compute_check_point(self):
-        if self.parameter:
-            self.check_point = self.parameter.checkpoint_ids
+        self.check_point = self.parameter.checkpoint_ids
 
 
 class Task(models.Model):
