@@ -37,7 +37,7 @@ class ProductionDR(models.Model):
     task_state = fields.Char(string='Task state', related='task_id.stage_id.name', readonly=True)
     hide_button = fields.Boolean(compute='_compute_hide_button')
     recolor = fields.Boolean(compute='_compute_recolor')
-    deadline = fields.Datetime(string="Deadline")
+    deadline = fields.Date(string="Deadline", compute='_compute_deadline')
 
     @api.multi
     def _compute_recolor(self):
@@ -116,6 +116,10 @@ class ProductionDR(models.Model):
     @api.depends('name')
     def _compute_specification(self):
         self.specification = self.name.specification
+
+    def _compute_deadline(self):
+        deadline = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 6))
+        self.deadline = deadline
 
 
 class Task(models.Model):
