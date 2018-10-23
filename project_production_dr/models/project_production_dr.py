@@ -26,8 +26,8 @@ class ProductionDR(models.Model):
     # result_type = fields.Selection([(k, v) for k, v in list(RESULT_TYPES.items())],
     #                         'Analysis Type', required=True, copy=False, default='material')
     reference = fields.Char(required=False, string="Reference")
-    specification = fields.Many2one('dr.parameter', compute='_compute_specification', string='Specification')
-    # specification = fields.Char(required=False, string="Specification")
+    # specification = fields.Many2one('dr.parameter', compute='_compute_specification', string='Specification')
+    specification = fields.Char(required=False, compute='_compute_specification', string="Specification")
     result = fields.Char(required=False, string="Result")
     remark = fields.Char(required=False, string="Remark")
     reviewer_id = fields.Many2one('res.users', 'Created by', readonly=True, default=lambda self: self.env.user)
