@@ -119,6 +119,7 @@ class ProductionDR(models.Model):
     def _compute_specification(self):
         self.specification = self.name.specification
 
+    @api.one
     def _compute_deadline(self):
         deadline = datetime.now() + relativedelta(days=+ 5))
         self.deadline = deadline
