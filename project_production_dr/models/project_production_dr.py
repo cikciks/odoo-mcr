@@ -121,9 +121,8 @@ class ProductionDR(models.Model):
 
     @api.one
     def _compute_deadline(self):
-        if self.deadline:
-            deadline = datetime.now() + relativedelta(days=+ 5)
-            self.deadline = deadline
+        deadline = datetime.now() + relativedelta(days=+ 5)
+        self.deadline = deadline
 
 
 class Task(models.Model):
