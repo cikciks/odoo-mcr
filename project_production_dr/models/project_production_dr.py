@@ -3,7 +3,7 @@ from odoo.tools import html_escape as escape
 from odoo.exceptions import Warning as UserError
 from odoo.tools.translate import _
 from datetime import datetime, date, timedelta
-
+from dateutil.relativedelta import relativedelta
 
 
 SUBTASK_STATES = {'done': 'Done',
