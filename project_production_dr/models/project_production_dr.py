@@ -26,7 +26,7 @@ class ProductionDR(models.Model):
     # result_type = fields.Selection([(k, v) for k, v in list(RESULT_TYPES.items())],
     #                         'Analysis Type', required=True, copy=False, default='material')
     reference = fields.Char(required=False, string="Reference")
-    specification = fields.Many2one('dr.parameter_type', compute='_compute_parameter_type', string='Parameter Type')
+    specification = fields.Many2one('dr.parameter_type', compute='_compute_specification', string='Specification')
     # specification = fields.Char(required=False, string="Specification")
     result = fields.Char(required=False, string="Result")
     remark = fields.Char(required=False, string="Remark")
@@ -111,6 +111,10 @@ class ProductionDR(models.Model):
     @api.depends('name')
     def _compute_parameter_type(self):
         self.result_type = self.name.parameter_type
+
+    @api.one
+    @api.depends('name')
+    def _compute_specication(self):
         self.specification = self.name.specification
 
 
