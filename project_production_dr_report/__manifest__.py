@@ -8,7 +8,7 @@
 
     "author": "MCR",
 
-    "depends": ['project-dr','project_production'],
+    "depends": ['project_production_dr'],
     "data": [
         'views/release_report.xml'
     ],
