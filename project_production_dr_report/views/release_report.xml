@@ -85,26 +85,36 @@
                                     <t t-set="result_type" t-value="result_type+[l.product_id.categ_id]"/>
                                 </t>
                                 -->
-                                <tr t-foreach="o.subtask_ids" t-as="line">
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.name"/>
-                                    </td>
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.reference"/>
-                                    </td>
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.specification"/>
-                                    </td>
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.result"/>
-                                    </td>
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.user_id"/>
-                                    </td>
-                                    <td style="padding-top: 1; padding-bottom: 1;">
-                                        <span t-field="line.remark"/>
-                                    </td>
-                                </tr>
+                                <t t-set="result_type" t-value="[]"/>
+                                <t t-foreach="o.subtask_ids" t-as="l">
+
+                                    <t t-set="result_type" t-value="result_type+[l.subtask_ids.parameter_type]"/>
+
+                                </t>
+                                <t t-foreach="set(result_type)" t-as="type">
+                                    <tr t-foreach="o.subtask_ids" t-as="line">
+                                        <t t-if="type.id==line.result">
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.name"/>
+                                            </td>
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.reference"/>
+                                            </td>
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.specification"/>
+                                            </td>
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.result"/>
+                                            </td>
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.user_id"/>
+                                            </td>
+                                            <td style="padding-top: 1; padding-bottom: 1;">
+                                                <span t-field="line.remark"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
                             </tbody>
 
                         </table>
