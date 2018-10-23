@@ -87,9 +87,7 @@
                                 -->
                                 <t t-set="result_type" t-value="[]"/>
                                 <t t-foreach="o.subtask_ids" t-as="l">
-
                                     <t t-set="result_type" t-value="result_type+[l.subtask_ids.result_type]"/>
-
                                 </t>
                                 <t t-foreach="set(result_type)" t-as="type">
                                     <tr t-foreach="o.subtask_ids" t-as="line">
