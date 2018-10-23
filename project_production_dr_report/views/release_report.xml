@@ -20,22 +20,22 @@
                                         <td><span t-field="o.lot"/></td>
                                     </tr>
                                     <tr>
+                                        <td><strong>Raw Material (kg)</strong></td>
+                                        <td>&#160; : &#160;</td>
+                                        <td><span t-field="o.weight_rm"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Finish Good (kg)</strong></td>
+                                        <td>&#160; : &#160;</td>
+                                        <td><span t-field="o.weight_fg"/></td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>Quantity</strong></td>
                                         <td>&#160; : &#160;</td>
                                         <td>
                                             <span t-field="o.qty_in_box"/> Box &#160;
                                             <span t-field="o.qty_in_pack"/> Pack
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Weight / Box</strong></td>
-                                        <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Quantity</strong></td>
-                                        <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
                                     </tr>
                                 </table>
                             </div>
