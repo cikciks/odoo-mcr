@@ -92,7 +92,7 @@
                                 <t t-foreach="set(result_type)" t-as="result_type">
                                     <tr>
                                         <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
-                                            <span t-esc="result_type"/>
+                                            <span t-esc="result_type.name"/>
                                         </td>
                                     </tr>
                                     <t t-foreach="o.subtask_ids" t-as="line">
@@ -116,9 +116,13 @@
                                                 <td style="padding-top: 1; padding-bottom: 1;">
                                                     <span t-field="line.remark"/>
                                                 </td>
-
                                             </tr>
                                         </t>
+                                        <tr>
+                                            <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
+                                                &#160;
+                                            </td>
+                                        </tr>
                                     </t>
                                 </t>
                             </tbody>
