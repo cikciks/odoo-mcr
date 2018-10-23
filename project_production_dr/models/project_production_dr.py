@@ -39,7 +39,7 @@ class ProductionDR(models.Model):
     task_state = fields.Char(string='Task state', related='task_id.stage_id.name', readonly=True)
     hide_button = fields.Boolean(compute='_compute_hide_button')
     recolor = fields.Boolean(compute='_compute_recolor')
-    deadline = fields.Date(string="Deadline", compute='_compute_deadline', , store=True)
+    deadline = fields.Date(string="Deadline", compute='_compute_deadline', store=True)
 
     @api.multi
     def _compute_recolor(self):
