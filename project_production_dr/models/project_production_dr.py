@@ -114,7 +114,7 @@ class ProductionDR(models.Model):
 
     @api.one
     @api.depends('name')
-    def _compute_specication(self):
+    def _compute_specification(self):
         self.specification = self.name.specification
 
 
