@@ -20,14 +20,14 @@
                                         <td><span t-field="o.lot"/></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Raw Material (kg)</strong></td>
+                                        <td><strong>Raw Material</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td><span t-field="o.weight_rm"/></td>
+                                        <td><span t-field="o.weight_rm"/> Kg</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Finish Good (kg)</strong></td>
+                                        <td><strong>Finish Good</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td><span t-field="o.weight_fg"/></td>
+                                        <td><span t-field="o.weight_fg"/> Kg</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Quantity</strong></td>
