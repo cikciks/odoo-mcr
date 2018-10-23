@@ -55,8 +55,8 @@
                     <group>
                         <field name="name"/>
                         <field name="result_type"/>
-                        <field name="reference"/>
                         <field name="specification"/>
+                        <field name="reference"/>
                         <field name="result"/>
                         <field name="remark"/>
                         <field name="user_id"/>
