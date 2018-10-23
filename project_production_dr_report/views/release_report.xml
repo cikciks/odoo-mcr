@@ -91,7 +91,7 @@
                                 <t t-foreach="o.subtask_ids" t-as="line">
                                     <t t-set="result_type" t-value="result_type+[line.result_type]"/>
                                 </t>
-                                <t t-foreach="set(result_type.sorted(key=lambda r: r.id, reverse=True))" t-as="result_type">
+                                <t t-foreach="set(result_type).sorted(key=lambda r: r.id, reverse=True)" t-as="result_type">
                                     <tr>
                                         <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
                                             <strong><span t-esc="result_type.name"/></strong>
