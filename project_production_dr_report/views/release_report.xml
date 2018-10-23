@@ -117,12 +117,12 @@
                                                 </td>
                                             </tr>
                                         </t>
-                                        <tr>
-                                            <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
-                                                &#160;
-                                            </td>
-                                        </tr>
                                     </t>
+                                    <tr>
+                                        <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
+                                            &#160;
+                                        </td>
+                                    </tr>
                                 </t>
                             </tbody>
                         </table>
