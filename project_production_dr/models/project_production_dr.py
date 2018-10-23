@@ -120,8 +120,7 @@ class ProductionDR(models.Model):
         self.specification = self.name.specification
 
     def _compute_deadline(self):
-        cur_date = datetime.datetime.now().date()
-        deadline = cur_date + datetime.timedelta(days=6)
+        deadline = datetime.now() + relativedelta(days=+ 5))
         self.deadline = deadline
 
 
