@@ -83,7 +83,7 @@ class ProductionDR(models.Model):
         result = super(ProductionDR, self).create(vals)
         vals = self._add_missing_default_values(vals)
         task = self.env['project.task'].browse(vals.get('task_id'))
-        task.send_subtask_email(vals['name.name'], vals['state'], vals['reviewer_id'], vals['user_id'])
+        task.send_subtask_email(vals['name'], vals['state'], vals['reviewer_id'], vals['user_id'])
         return result
 
     @api.multi
