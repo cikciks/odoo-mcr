@@ -1,5 +1,5 @@
 {
-    "name": """Project Task - Production Document Release Report""",
+    "name": """Project Production Document Release Task Report""",
     "summary": """Report for Document Release""",
     "category": """Project Management""",
     "images": ['images/checklist_main.png'],
