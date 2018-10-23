@@ -90,12 +90,12 @@
                                     <t t-set="result_type" t-value="result_type+[line.result_type]"/>
                                 </t>
                                 <t t-foreach="set(result_type)" t-as="result_type">
+                                    <tr>
+                                        <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
+                                            <span t-field="line.result_type"/>
+                                        </td>
+                                    </tr>
                                     <t t-foreach="o.subtask_ids" t-as="line">
-                                        <tr>
-                                            <td colspan="6" style="padding-top: 1; padding-bottom: 1;">
-                                                <span t-field="line.result_type"/>
-                                            </td>
-                                        </tr>
                                         <t t-if="result_type.id==line.result_type.id">
                                             <tr>
                                                 <td style="padding-top: 1; padding-bottom: 1;">
