@@ -2,6 +2,8 @@ from odoo import models, fields, api
 from odoo.tools import html_escape as escape
 from odoo.exceptions import Warning as UserError
 from odoo.tools.translate import _
+from datetime import datetime, date, timedelta
+
 
 
 SUBTASK_STATES = {'done': 'Done',
@@ -118,7 +120,7 @@ class ProductionDR(models.Model):
         self.specification = self.name.specification
 
     def _compute_deadline(self):
-        deadline = (datetime.strptime(self.date_prod, '%Y-%m-%d') + relativedelta(days=+ 6))
+        deadline = (datetime.strptime(datetime.now(), '%Y-%m-%d') + relativedelta(days=+ 6))
         self.deadline = deadline
 
 
