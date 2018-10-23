@@ -20,9 +20,12 @@
                                         <td><span t-field="o.lot"/></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Weight / Pack</strong></td>
+                                        <td><strong>Quantity</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td>
+                                            <span t-field="o.qty_in_box"/> Box &#160;
+                                            <span t-field="o.qty_in_pack"/> Pack
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><strong>Weight / Box</strong></td>
@@ -41,27 +44,27 @@
                                     <tr>
                                         <td><strong>Production Date</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.date_prod" t-field-options='{"format": "dd MMMM yyyy"}'/></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Best Before Date</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.date_bb" t-field-options='{"format": "dd MMMM yyyy"}'/></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Release Deadline</strong></td>
+                                        <td><strong>Release Date 1</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.date_release1" t-field-options='{"format": "dd MMMM yyyy"}'/></td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Release Date</strong></td>
+                                        <td><strong>Release Date 2</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.date_release2" t-field-options='{"format": "dd MMMM yyyy"}'/></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Status</strong></td>
                                         <td>&#160; : &#160;</td>
-                                        <td>&#160;</td>
+                                        <td><span t-field="o.prod_status"/></td>
                                     </tr>
                                 </table>
                             </div>
