@@ -91,9 +91,6 @@
                                 </t>
                                 <t t-foreach="set(result_type)" t-as="result_type">
                                     <tr t-foreach="o.subtask_ids" t-as="line">
-                                        <td style="padding-top: 1; padding-bottom: 1;">
-                                            <span t-field="line.result_type"/>
-                                        </td>
                                         <t t-if="result_type.id==line.result_type.id">
                                             <td style="padding-top: 1; padding-bottom: 1;">
                                                 <span t-field="line.name"/>
