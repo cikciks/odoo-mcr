@@ -53,7 +53,8 @@ class Task(models.Model):
 
     @api.depends('total_parameter','total_point')
     def _compute_score(self):
-        self.score = (self.total_point / self.total_parameter) * 100
+        if not self.total_parameter:
+            self.score = (self.total_point / self.total_parameter) * 100
 
 
 class FTQParameter(models.Model):
