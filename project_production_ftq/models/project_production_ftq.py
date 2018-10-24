@@ -44,8 +44,10 @@ class Task(models.Model):
     @api.one
     @api.depends('ftq_ids')
     def _count_total_parameter(self):
-        task_id = self.id
-        self.total_parameter = self.ftq_ids.search_count(['task_id.id','=',self.env.id])
+        # task_id = self.id
+        # self.total_parameter = self.ftq_ids.search_count([])
+        self.total_parameter = len(self.env['id'].search_count([]))
+
 
     @api.one
     @api.depends('ftq_ids')
