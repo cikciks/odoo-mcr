@@ -54,7 +54,8 @@ class Task(models.Model):
     @api.depends('ftq_ids')
     def _count_total_point(self):
         task_id = self.id
-        self.total_point = self.ftq_ids.search_count([('task_id', '=', task_id),('mark_point', '=', True)])
+        parameter =  self.ftq_ids.search_count([('task_id', '=', task_id)])
+        self.total_point = parameter([('mark_point', '=', True)])
 
     @api.depends('total_parameter','total_point')
     def _compute_score(self):
