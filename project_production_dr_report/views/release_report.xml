@@ -7,7 +7,7 @@
                     <div class="page" style="font-size: 10px">
                         <h4>Production: <span t-field="o.name"/> </h4>
                         <div class="row mt8 mb8">
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <table>
                                     <tr>
                                         <td><strong>Product</strong></td>
@@ -39,7 +39,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <table>
                                     <tr>
                                         <td><strong>Production Date</strong></td>
