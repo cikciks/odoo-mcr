@@ -25,7 +25,8 @@ class Task(models.Model):
     ftq_ids = fields.One2many('project.production.ftq', 'task_id', 'FTQ')
     default_user = fields.Many2one('res.users', compute='_compute_default_user')
     total_parameter = fields.Integer(compute='_count_total_parameter')
-    total_point = fields.Integer(compute='_count_total_point')
+    # total_point = fields.Integer(compute='_count_total_point')
+    total_point = fields.Char(required=False, string="Note")
     score = fields.Float(compute='_compute_score', string='Score (%)')
 
     @api.multi
@@ -57,7 +58,7 @@ class Task(models.Model):
         # parameter = self.ftq_ids.filtered(lambda r: r.task_id == task_id)
         parameter = self.env['project.production.ftq'].browse(task_id)
         # self.total_point = parameter.search_count([('mark_point', '=', True)])
-        self.total_point = parameter.search_count([])
+        self.total_point = parameter
         # self.total_point = self.ftq_ids.search_count([[('task_id', '=', task_id)], [('mark_point', '=', True)]])
 
     @api.depends('total_parameter','total_point')
