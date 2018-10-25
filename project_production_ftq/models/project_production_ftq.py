@@ -55,7 +55,7 @@ class Task(models.Model):
         task_id = self.id
         # parameter = self.ftq_ids.search([('task_id', '=', task_id)])
         # parameter = self.ftq_ids.filtered(lambda r: r.task_id == task_id)
-        parameter = self.env['self.ftq_ids']
+        parameter = self.env['ftq_ids']
         # self.total_point = parameter.search_count([('mark_point', '=', True)])
         self.total_point = task_id
         # self.total_point = self.ftq_ids.search_count([[('task_id', '=', task_id)], [('mark_point', '=', True)]])
